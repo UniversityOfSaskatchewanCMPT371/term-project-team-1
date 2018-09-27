@@ -1,4 +1,5 @@
 # HealthDeck
+[![Coverage Status](https://coveralls.io/repos/github/UniversityOfSaskatchewanCMPT371/term-project-team-1/badge.svg?branch=master)](https://coveralls.io/github/UniversityOfSaskatchewanCMPT371/term-project-team-1?branch=master)
 
 HealthDeck will be your companion app for you to know your healthcare practitioners better!
 
@@ -113,3 +114,4 @@ MIT
    [Pineda]: <mailto:jay.p@usask.ca>
    [Rathy]: <mailto:vip670@mail.usask.ca>
    [Crooks]: <mailto:bbc712@mail.usask.ca>
+   
