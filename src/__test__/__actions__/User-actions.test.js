@@ -1,6 +1,7 @@
-import configureStore from 'redux-mock-store' //ES6 modules
-import * as userActions from '../../actions/UserActions'
+import configureStore from 'redux-mock-store'; // ES6 modules
 import thunk from 'redux-thunk';
+import * as userActions from '../../actions/UserActions';
+
 
 const middlewares = [thunk]
 const mockStore = configureStore(middlewares)
