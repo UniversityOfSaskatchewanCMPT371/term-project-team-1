@@ -1,6 +1,5 @@
 # HealthDeck
-[![Coverage Status](https://coveralls.io/repos/github/UniversityOfSaskatchewanCMPT371/term-project-team-1/badge.svg?branch=master)](https://coveralls.io/github/UniversityOfSaskatchewanCMPT371/term-project-team-1?branch=master)[![Build Status](https://travis-ci.com/UniversityOfSaskatchewanCMPT371/term-project-team-1.svg?branch=master)](https://travis-ci.com/UniversityOfSaskatchewanCMPT371/term-project-team-1)
-![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)
+[![Coverage Status](https://coveralls.io/repos/github/UniversityOfSaskatchewanCMPT371/term-project-team-1/badge.svg?branch=master)](https://coveralls.io/github/UniversityOfSaskatchewanCMPT371/term-project-team-1?branch=master) [![Build Status](https://travis-ci.com/UniversityOfSaskatchewanCMPT371/term-project-team-1.svg?branch=master)](https://travis-ci.com/UniversityOfSaskatchewanCMPT371/term-project-team-1) ![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)
 
 
 HealthDeck will be your companion app for you to know your healthcare practitioners better!

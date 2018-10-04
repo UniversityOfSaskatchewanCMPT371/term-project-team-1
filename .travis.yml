@@ -27,3 +27,6 @@ before_script:
 script:
   - npm run lint
   - npm test
+  - sbt clean coverage test 
+
+after_success: "sbt coveralls"
