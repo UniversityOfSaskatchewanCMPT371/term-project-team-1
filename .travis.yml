@@ -2,11 +2,14 @@ sudo: false
 language: node_js
 node_js:
   - "stable"
+
 cache:
   directories:
     - node_modules
 env:
   - CXX=g++-4.8
+services:
+  - mongodb
 addons:
   apt:
     sources:
@@ -17,6 +20,10 @@ addons:
 install:
   - npm install
 
+before_script:
+  - sleep 15
+  - mongo mydb_test --eval 'db.createUser({user:"travis",pwd:"test",roles:["readWrite"]});'
+  
 script:
   - npm run lint
   - npm test
