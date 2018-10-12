@@ -101,8 +101,7 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
     }
 
     /*
-    @Pre:
-
+    @Pre: None
     @Post: If the app was installed then it resumes and does not need to ask for permissions, this then displays the scannerView
     which then starts the camera
      */
@@ -127,7 +126,7 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
     }
 
     /*
-        @Pre:
+        @Pre: Already must be in the app
         @Post: when app is closed stop using the camera.
          */
     @Override
@@ -137,7 +136,8 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
     }
 
     /*
-    @Pre:
+    @Pre:  String msg : A string of what the user will see pop up onto their screen
+           listener : what action the user can preform on that given popup
     @Post: Allows the user to see an alert message that then prompts them to allow permission for not allowing their camera to be used
            onto their screen, Can choose ok turning the permissions on automatically.
      */
@@ -149,7 +149,11 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
                 .create()
                 .show();
     }
-
+    /*
+       @Pre:  Result: an obj in which the QR scanner will be passed through.
+       @Post: According to what is scanned there would be a toast pop up with two respective buttons, being visit which will try and open an url if applicable,
+              and a neutral button in which nothing positive or negative will occur
+        */
     @Override
     public void handleResult(final Result result){
         final String scanResults = result.getText();
