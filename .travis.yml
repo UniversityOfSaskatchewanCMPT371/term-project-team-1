@@ -1,11 +1,17 @@
-sudo: false
+# Tell Travis to use the latest (stable) version of NodeJS
 language: node_js
 node_js:
   - "stable"
 
+# Cache the node_modules directory between builds instead of re-compiling the whole directory each time you commit.
 cache:
   directories:
     - node_modules
+
+# Install npm dependencies. Internet says this is automatic, but I put it here just in case.
+install:
+  - npm install
+
 env:
   - CXX=g++-4.8
 services:
@@ -17,16 +23,19 @@ addons:
     packages:
       - g++-4.8
 
-install:
-  - npm install
-
 before_script:
   - sleep 15
   - mongo mydb_test --eval 'db.createUser({user:"travis",pwd:"test",roles:["readWrite"]});'
-  
+
+# Tells Travis which commands to run. Commands run in a succession, and if a command fails (i.e. exits with anything but 0), 
+# the build is marked as failed. Failed builds do not get deployed. Note that Travis knows to npm install already.
 script:
-  - npm run lint
+  # Linting is disabled for now until we find out how to style our shit
+  # - npm run lint
+
+  # 
   - npm test
+  - npm run build
   - sbt clean coverage test 
 
 after_success: "sbt coveralls"
