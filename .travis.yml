@@ -15,7 +15,7 @@ install:
 env:
   - CXX=g++-4.8
 services:
-  - mongodb
+  - mongodb 
 addons:
   apt:
     sources:
@@ -35,7 +35,8 @@ script:
 
   # 
   - npm test
-  - npm run build
-  - sbt clean coverage test 
+  # For coveralls and buildfile
+  # - npm run build
+  # - sbt clean coverage test 
 
-after_success: "sbt coveralls"
+# after_success: "sbt coveralls"
