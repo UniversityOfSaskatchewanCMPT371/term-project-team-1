@@ -24,7 +24,7 @@ before_install:
 # Install npm dependencies. Internet says this is automatic, but I put it here just in case.
 install:
   - npm install
-  - npm install coveralls --save-dev
+  - npm install --save-dev coveralls 
 
 
 # Workaround to MongoDB locking out when sleep 15 is not implemented
@@ -43,3 +43,6 @@ script:
   # Fuck coveralls man
   # Add { "coveralls": "jest --coverage | coveralls" } to package.json when I get this shit to work
   - npm run coveralls
+
+after_script:
+  - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
