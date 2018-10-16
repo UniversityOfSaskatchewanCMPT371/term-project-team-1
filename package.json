@@ -1,11 +1,12 @@
 {
-  "name": "ReactNativeTemplate",
+  "name": "HealthDeck",
   "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
-    "lint": "eslint ./"
+    "lint": "eslint ./",
+    "coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls"
   },
   "dependencies": {
     "@babel/core": "^7.0.0-beta.47",
