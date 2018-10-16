@@ -8,9 +8,9 @@ cache:
   directories:
     - node_modules
 
-# Install npm dependencies. Internet says this is automatic, but I put it here just in case.
-install:
-  - npm install
+branches:
+  only:
+    - master
 
 env:
   - CXX=g++-4.8
@@ -23,6 +23,16 @@ addons:
     packages:
       - g++-4.8
 
+before_install:
+  - npm update
+
+# Install npm dependencies. Internet says this is automatic, but I put it here just in case.
+install:
+  - npm install
+  - npm install coveralls --save-dev
+
+
+
 before_script:
   - sleep 15
   - mongo mydb_test --eval 'db.createUser({user:"travis",pwd:"test",roles:["readWrite"]});'
@@ -33,10 +43,5 @@ script:
   # Linting is disabled for now until we find out how to style our shit
   # - npm run lint
 
-  # 
   - npm test
-  # For coveralls and buildfile
-  # - npm run build
-  # - sbt clean coverage test 
-
-# after_success: "sbt coveralls"
+  - npm run coveralls
