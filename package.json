@@ -6,7 +6,7 @@
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
     "lint": "eslint ./",
-    "coveralls": "jest --coverage && cat ./src/__test__/coverage/lcov.info | coveralls"
+    "coveralls": "jest --coverage | coveralls"
   },
   "dependencies": {
     "@babel/core": "^7.0.0-beta.47",
