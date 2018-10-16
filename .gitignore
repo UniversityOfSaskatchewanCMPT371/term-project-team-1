@@ -39,6 +39,7 @@ yarn-error.log
 # coveralls
 #
 coverage
+.coveralls.yml
 node_modules
 
 # ios/Pods,

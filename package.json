@@ -5,7 +5,9 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
-    "lint": "eslint ./"
+    "lint": "eslint ./",
+    "coverage": "jest --coverage > ./coverage/lcov.info",
+    "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls"
   },
   "dependencies": {
     "@babel/core": "^7.0.0-beta.47",
