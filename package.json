@@ -6,7 +6,7 @@
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
     "lint": "eslint ./",
-    "coverage": "jest --coverage > ./coverage/lcov.info",
+    "coverage": "jest --coverage",
     "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls"
   },
   "dependencies": {
