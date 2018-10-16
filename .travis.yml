@@ -38,11 +38,11 @@ install:
 script:
   # Linting is disabled for now until we find out how to style our shit
   # - npm run lint
-
   - npm test
-  # Fuck coveralls man
-  # Add { "coveralls": "jest --coverage | coveralls" } to package.json when I get this shit to work
-  - npm run coveralls
 
-after_script:
-  - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+
+jobs:
+  include:
+    - stage: Produce Coverage
+      node_js: node
+      script: jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage

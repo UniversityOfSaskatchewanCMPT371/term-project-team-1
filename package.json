@@ -5,8 +5,7 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
-    "lint": "eslint ./",
-    "coveralls": "jest --coverage"
+    "lint": "eslint ./"
   },
   "dependencies": {
     "@babel/core": "^7.0.0-beta.47",
