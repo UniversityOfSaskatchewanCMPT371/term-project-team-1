@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "_jest",
+    "test": "jest",
     "lint": "eslint ./",
-    "coveralls": "_jest --coverage | coveralls"
+    "coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls"
   },
   "dependencies": {
     "@babel/core": "^7.0.0-beta.47",
@@ -45,6 +45,7 @@
     "preset": "react-native",
     "transform": {
       "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js"
-    }
+    },
+    "verbose": true
   }
 }
