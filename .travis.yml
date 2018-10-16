@@ -16,12 +16,7 @@ env:
   - CXX=g++-4.8
 services:
   - mongodb 
-addons:
-  apt:
-    sources:
-      - ubuntu-toolchain-r-test
-    packages:
-      - g++-4.8
+
 
 before_install:
   - npm update
@@ -32,10 +27,11 @@ install:
   - npm install coveralls --save-dev
 
 
-
-before_script:
-  - sleep 15
-  - mongo mydb_test --eval 'db.createUser({user:"travis",pwd:"test",roles:["readWrite"]});'
+# Workaround to MongoDB locking out when sleep 15 is not implemented
+# Will be uncommented when coverage testing is implemented
+# before_script:
+#   - sleep 15
+#   - mongo mydb_test --eval 'db.createUser({user:"travis",pwd:"test",roles:["readWrite"]});'
 
 # Tells Travis which commands to run. Commands run in a succession, and if a command fails (i.e. exits with anything but 0), 
 # the build is marked as failed. Failed builds do not get deployed. Note that Travis knows to npm install already.
