@@ -6,7 +6,7 @@ describe('QR Code Reader', () => {
     expect(mainActivity.checkPermission('0')).toBe(false)
   })
 
-  test('It properly requests permissions') () => {
+  test('It properly requests permissions', () => {
     var testCameraPermission = 0
     mainActivity.requestPermission(testCameraPermission)
     expect(testCameraPermission).toBe(1)
