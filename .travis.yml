@@ -22,12 +22,9 @@ before_install:
   - npm update
 
 # Install npm dependencies. Internet says this is automatic, but I put it here just in case.
-# trying out a new ci install thing as written on 
-# https://hackernoon.com/how-to-speed-up-continuous-integration-build-with-new-npm-ci-and-package-lock-json-7647f91751a
 install:
-  - npm i -g npm@5.7.1 # this should be deleted once 5.7.X is out of "pre-release"
-  - npm ci             # instead of default npm install 
-
+  - npm install
+  - npm install --save-dev coveralls 
 
 
 # Workaround to MongoDB locking out when sleep 15 is not implemented
@@ -41,13 +38,11 @@ install:
 script:
   # Linting is disabled for now until we find out how to style our shit
   # - npm run lint
-
   - npm test
-  # Fuck coveralls man
-  # Add { "coveralls": "jest --coverage | coveralls" } to package.json when I get this shit to work
-  - npm run coveralls
-
-after_script:
-  - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
 
 
+jobs:
+  include:
+    - stage: Produce Coverage
+      node_js: node
+      script: jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
