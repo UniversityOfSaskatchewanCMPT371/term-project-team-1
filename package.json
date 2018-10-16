@@ -47,6 +47,8 @@
     "transform": {
       "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js"
     },
-    "verbose": true
+    "verbose": true,
+    "collectCoverage": true,
+    "coverageReporters": ["lcov"]
   }
 }
