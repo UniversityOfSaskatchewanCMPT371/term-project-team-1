@@ -15,10 +15,10 @@
           super(props);
       }
 
-    sum(a,b){
-        const sumVal = a+b;
-        return sumVal;
-      }
+    sum(a, b){
+      const sumVal = a + b;
+      return sumVal;
+    }
 
       render() {
  		return (
