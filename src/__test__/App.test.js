@@ -11,5 +11,5 @@ import renderer from 'react-test-renderer';
 
 test('adds 3+2 to equal 5', () => {
  expect(sum(3,2)).toBe(5);
- expect(sum(3,2)).toNotBe(4);
+ expect(sum(3,2)).not.toBe(4);
 });
