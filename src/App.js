@@ -1,17 +1,19 @@
 import React, {Component} from 'react';
 import { StyleSheet, Text, View, ActivityIndicator } from 'react-native';
 
+
+function sum(a, b){
+  const sumVal = a + b;
+  return sumVal;
+}
+module.exports = sum;
+
 export default class App extends Component {
 
   // constructor(props) {
   //   super(props);
   // }
-
-  sum(a, b){
-    const sumVal = a + b;
-    return sumVal;
-  }
-
+  
   render() {
  	  return (
       <View style={styles.container}>
