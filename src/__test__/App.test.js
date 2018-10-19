@@ -1,4 +1,4 @@
-const sum = require('./sum');
+const sum = require('./../sum');
 import React from 'react';
 import App from '../';
 
