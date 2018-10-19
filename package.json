@@ -4,12 +4,13 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest",
+    "test": "jest --updateSnapshot",
     "lint": "eslint ./"
   },
   "dependencies": {
     "@babel/core": "^7.0.0-beta.47",
     "axios": "^0.18.0",
+    "jest-cli": "^23.6.0",
     "prop-types": "^15.6.1",
     "react": "16.4.0",
     "react-native": "0.56.0",
