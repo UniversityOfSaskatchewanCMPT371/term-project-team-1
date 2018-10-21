@@ -4,13 +4,13 @@ import React from 'react';
 import { Text, View } from 'react-native';
 
 //creating the header component with specefic properties ( functional component)
-const Header = ({props}) => {
+const Header = ({headerTitle}) => {
   //Initilizing the style of the header component
   const { textStyle , viewStyle } = styles;
 
   return (
     <View style={viewStyle}>
-      <Text style={textStyle}>{props.headerTitle}</Text>
+      <Text style={textStyle}>{headerTitle}</Text>
     </View>
   );
 };
