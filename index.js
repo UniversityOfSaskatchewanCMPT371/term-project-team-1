@@ -4,8 +4,8 @@
 import React from 'react';
 import { AppRegistry, View } from 'react-native';
 //importing components we made
-import Header from './src/components/CardsStuff/header';
-import CardsList from './src/components/CardsStuff/CardsList';
+import Header from './src/components/header';
+import CardsList from './src/components/CardsList';
 
 //Creating the components
 const App = () => (
