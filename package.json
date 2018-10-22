@@ -12,6 +12,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
+    "axios": "^0.18.0",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^23.6.0",
     "enzyme": "^3.7.0",
@@ -22,6 +23,7 @@
     "react-test-renderer": "16.6.0-alpha.8af6728"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "react-native",
+    "setupTestFrameworkScriptFile": "<rootDir>/src/setupTests.js"
   }
 }

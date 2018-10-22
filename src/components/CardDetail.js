@@ -23,7 +23,7 @@ const CardDetail = ({card}) => {
            source={{uri: thumbnail_image}}
             />
         </View>
-        
+
         <View style={headerContentStyle}>
         <Text style={headerTextStyle}>{title}</Text>
         <Text>{artist}</Text>

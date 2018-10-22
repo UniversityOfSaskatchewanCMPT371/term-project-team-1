@@ -10,7 +10,7 @@
  import { StyleSheet, Text, View, ActivityIndicator } from 'react-native';
 
  export default class App extends React.Component {
-	
+
 	sum(a,b){
         const sumVal = a+b;
        return sumVal;
