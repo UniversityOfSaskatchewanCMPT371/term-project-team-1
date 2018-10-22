@@ -20,7 +20,8 @@
     "jest": "23.6.0",
     "metro-react-native-babel-preset": "0.48.1",
     "react-dom": "^16.5.2",
-    "react-test-renderer": "16.6.0-alpha.8af6728"
+    "react-test-renderer": "16.6.0-alpha.8af6728",
+    "sinon": "^7.0.0"
   },
   "jest": {
     "preset": "react-native",
