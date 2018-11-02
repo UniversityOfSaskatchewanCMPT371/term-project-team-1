@@ -1,0 +1,86 @@
+{
+  "project_info": {
+    "project_number": "610614263722",
+    "firebase_url": "https://healthdeck-43498.firebaseio.com",
+    "project_id": "healthdeck-43498",
+    "storage_bucket": "healthdeck-43498.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:610614263722:android:2dd8ba177c4c5feb",
+        "android_client_info": {
+          "package_name": "com.example.jm.testapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "610614263722-oqk88v9d7quadnbrqjofjgq1arick4ob.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.jm.testapp",
+            "certificate_hash": "c70d7248a11767ec9ecc5749ce386214c1978afb"
+          }
+        },
+        {
+          "client_id": "610614263722-lttnkgd6msnrcdkpdrqge7vtoukjunt0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEZSCgxFsjRIMTBYdxYhLGewe9wBwszgY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "610614263722-lttnkgd6msnrcdkpdrqge7vtoukjunt0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:610614263722:android:efc516ba21f2d2ce",
+        "android_client_info": {
+          "package_name": "com.tutorial"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "610614263722-lttnkgd6msnrcdkpdrqge7vtoukjunt0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEZSCgxFsjRIMTBYdxYhLGewe9wBwszgY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

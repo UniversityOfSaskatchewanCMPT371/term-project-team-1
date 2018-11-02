@@ -8,6 +8,10 @@ import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
 
+// Jay: Had to add this line to remove a runtime error: 
+// "error: cannot find symbol return BuildConfig.DEBUG;"
+import com.facebook.react.BuildConfig;
+
 import java.util.Arrays;
 import java.util.List;
 
