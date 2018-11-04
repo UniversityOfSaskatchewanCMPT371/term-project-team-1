@@ -35,8 +35,8 @@ test('renders correctly', () => {
 
   });
 
-/*
-  test('it renders each item in the card', () =>{
+
+  test('it puts each item in the card properly', () =>{
     const cardVals = {
       title:'Test',
       artist:'Smith',
@@ -45,13 +45,19 @@ test('renders correctly', () => {
       url: 'google.ca'
     };
 
-    const wrapper = shallow(<CardDetail card={cardVals}/>);
-    expect(wrapper.find('card')).toBeDefined();
+    const wrapper = mount(<CardDetail card={cardVals}/>);
+    expect(wrapper.prop('card':'title')).toBeDefined();
+    expect(wrapper.prop('card':'artist')).toBeDefined();
+    expect(wrapper.prop('card':'thumbnail_image')).toBeDefined();
+    expect(wrapper.prop('card':'image')).toBeDefined();
+    expect(wrapper.prop('card':'url')).toBeDefined();
+    //expect(wrapper.)
+    //expect(wrapper.prop('artist')).toBeDefined();
 
-    expect(wrapper.find('CardDetail').get(0).props).toEqual('Smith');
+
 
 });
-*/
+
 
 /* Test idea modified from
 https://medium.com/@indvinoth/react-native-how-to-test-onpress-event-using-jest-1cb19115863e

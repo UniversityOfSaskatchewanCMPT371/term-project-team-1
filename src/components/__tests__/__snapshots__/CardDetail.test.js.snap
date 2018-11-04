@@ -4,7 +4,15 @@ exports[`renders correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <CardDetail
-    card="google.ca"
+    card={
+      Object {
+        "artist": "Smith",
+        "image": "https://i.imgur.com/K3KJ3w4h.jpg",
+        "thumbnail_image": "https://images-na.ssl-images-amazon.com/images/I/61McsadO1OL.jpg",
+        "title": "Test",
+        "url": "google.ca",
+      }
+    }
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -34,7 +42,7 @@ ShallowWrapper {
             <Component
               source={
                 Object {
-                  "uri": undefined,
+                  "uri": "https://images-na.ssl-images-amazon.com/images/I/61McsadO1OL.jpg",
                 }
               }
               style={
@@ -59,15 +67,19 @@ ShallowWrapper {
                   "fontSize": 18,
                 }
               }
-            />
-            <Component />
+            >
+              Test
+            </Component>
+            <Component>
+              Smith
+            </Component>
           </Component>
         </CardSectionStyle>,
         <CardSectionStyle>
           <Component
             source={
               Object {
-                "uri": undefined,
+                "uri": "https://i.imgur.com/K3KJ3w4h.jpg",
               }
             }
             style={
@@ -109,7 +121,7 @@ ShallowWrapper {
               <Component
                 source={
                   Object {
-                    "uri": undefined,
+                    "uri": "https://images-na.ssl-images-amazon.com/images/I/61McsadO1OL.jpg",
                   }
                 }
                 style={
@@ -134,8 +146,12 @@ ShallowWrapper {
                     "fontSize": 18,
                   }
                 }
-              />
-              <Component />
+              >
+                Test
+              </Component>
+              <Component>
+                Smith
+              </Component>
             </Component>,
           ],
         },
@@ -149,7 +165,7 @@ ShallowWrapper {
               "children": <Component
                 source={
                   Object {
-                    "uri": undefined,
+                    "uri": "https://images-na.ssl-images-amazon.com/images/I/61McsadO1OL.jpg",
                   }
                 }
                 style={
@@ -173,7 +189,7 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "source": Object {
-                  "uri": undefined,
+                  "uri": "https://images-na.ssl-images-amazon.com/images/I/61McsadO1OL.jpg",
                 },
                 "style": Object {
                   "height": 50,
@@ -198,8 +214,12 @@ ShallowWrapper {
                       "fontSize": 18,
                     }
                   }
-                />,
-                <Component />,
+                >
+                  Test
+                </Component>,
+                <Component>
+                  Smith
+                </Component>,
               ],
               "style": Object {
                 "flexDirection": "column",
@@ -213,13 +233,13 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "children": undefined,
+                  "children": "Test",
                   "style": Object {
                     "fontSize": 18,
                   },
                 },
                 "ref": null,
-                "rendered": null,
+                "rendered": "Test",
                 "type": [Function],
               },
               Object {
@@ -227,10 +247,10 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "children": undefined,
+                  "children": "Smith",
                 },
                 "ref": null,
-                "rendered": null,
+                "rendered": "Smith",
                 "type": [Function],
               },
             ],
@@ -247,7 +267,7 @@ ShallowWrapper {
           "children": <Component
             source={
               Object {
-                "uri": undefined,
+                "uri": "https://i.imgur.com/K3KJ3w4h.jpg",
               }
             }
             style={
@@ -266,7 +286,7 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "source": Object {
-              "uri": undefined,
+              "uri": "https://i.imgur.com/K3KJ3w4h.jpg",
             },
             "style": Object {
               "flex": 1,
@@ -330,7 +350,7 @@ ShallowWrapper {
               <Component
                 source={
                   Object {
-                    "uri": undefined,
+                    "uri": "https://images-na.ssl-images-amazon.com/images/I/61McsadO1OL.jpg",
                   }
                 }
                 style={
@@ -355,15 +375,19 @@ ShallowWrapper {
                     "fontSize": 18,
                   }
                 }
-              />
-              <Component />
+              >
+                Test
+              </Component>
+              <Component>
+                Smith
+              </Component>
             </Component>
           </CardSectionStyle>,
           <CardSectionStyle>
             <Component
               source={
                 Object {
-                  "uri": undefined,
+                  "uri": "https://i.imgur.com/K3KJ3w4h.jpg",
                 }
               }
               style={
@@ -405,7 +429,7 @@ ShallowWrapper {
                 <Component
                   source={
                     Object {
-                      "uri": undefined,
+                      "uri": "https://images-na.ssl-images-amazon.com/images/I/61McsadO1OL.jpg",
                     }
                   }
                   style={
@@ -430,8 +454,12 @@ ShallowWrapper {
                       "fontSize": 18,
                     }
                   }
-                />
-                <Component />
+                >
+                  Test
+                </Component>
+                <Component>
+                  Smith
+                </Component>
               </Component>,
             ],
           },
@@ -445,7 +473,7 @@ ShallowWrapper {
                 "children": <Component
                   source={
                     Object {
-                      "uri": undefined,
+                      "uri": "https://images-na.ssl-images-amazon.com/images/I/61McsadO1OL.jpg",
                     }
                   }
                   style={
@@ -469,7 +497,7 @@ ShallowWrapper {
                 "nodeType": "class",
                 "props": Object {
                   "source": Object {
-                    "uri": undefined,
+                    "uri": "https://images-na.ssl-images-amazon.com/images/I/61McsadO1OL.jpg",
                   },
                   "style": Object {
                     "height": 50,
@@ -494,8 +522,12 @@ ShallowWrapper {
                         "fontSize": 18,
                       }
                     }
-                  />,
-                  <Component />,
+                  >
+                    Test
+                  </Component>,
+                  <Component>
+                    Smith
+                  </Component>,
                 ],
                 "style": Object {
                   "flexDirection": "column",
@@ -509,13 +541,13 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "class",
                   "props": Object {
-                    "children": undefined,
+                    "children": "Test",
                     "style": Object {
                       "fontSize": 18,
                     },
                   },
                   "ref": null,
-                  "rendered": null,
+                  "rendered": "Test",
                   "type": [Function],
                 },
                 Object {
@@ -523,10 +555,10 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "class",
                   "props": Object {
-                    "children": undefined,
+                    "children": "Smith",
                   },
                   "ref": null,
-                  "rendered": null,
+                  "rendered": "Smith",
                   "type": [Function],
                 },
               ],
@@ -543,7 +575,7 @@ ShallowWrapper {
             "children": <Component
               source={
                 Object {
-                  "uri": undefined,
+                  "uri": "https://i.imgur.com/K3KJ3w4h.jpg",
                 }
               }
               style={
@@ -562,7 +594,7 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "source": Object {
-                "uri": undefined,
+                "uri": "https://i.imgur.com/K3KJ3w4h.jpg",
               },
               "style": Object {
                 "flex": 1,
