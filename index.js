@@ -3,9 +3,12 @@
 //Importing library to create components
 import React from 'react';
 import { AppRegistry, View } from 'react-native';
+import firebase from 'firebase';
 //importing components we made
 import Header from './src/components/Header';
 import CardsList from './src/components/CardsList';
+
+
 
 //Creating the components
 const App = () => (
@@ -16,6 +19,15 @@ const App = () => (
       <CardsList />
   </View>
 );
+
+
+var config = {
+    databaseURL: "https://healthdeck-43498.firebaseio.com",
+    projectId: "healthdeck-43498",
+};
+
+firebase.initializeApp(config),
+
 
 
 //Rendering on device
