@@ -1,27 +1,57 @@
 import CardDetail from '../CardDetail';
-import { shallow,configure } from 'enzyme';
+import { shallow,configure,mount } from 'enzyme';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
 import Adapter from 'enzyme-adapter-react-16';
 import sinon from "sinon";
-configure({ adapter: new Adapter() });
 //Imports to get Enzyme to work if possible -> will work on later
-const spy = sinon.spy();
+configure({ adapter: new Adapter() });
+
+//const willMount = sinon.spy();
+//const didMount = sinon.spy();
+//const willUnmount = sinon.spy();
+
 
 test('renders correctly', () => {
-  const wrapper = shallow(
-    /*you can't write these out individually; you have to call
-    the entire card structure and then destructure it, giving it
-    each piece. Would be nice if we could call each piece separately
-    (functions, whatever) because this kind of sucks.*/
-    <CardDetail card={"Test","Artist",null,null,"google.ca"}/>
+  /*you can't write these out individually; you have to call
+  the entire card structure and then destructure it, giving it
+  each piece. Would be nice if we could call each piece separately
+  (functions, whatever) because this kind of sucks.*/
 
-);
+  const cardVals = {
+    title:'Test',
+    artist:'Smith',
+    thumbnail_image:"https://images-na.ssl-images-amazon.com/images/I/61McsadO1OL.jpg",
+    image:"https://i.imgur.com/K3KJ3w4h.jpg",
+    url: 'google.ca'
+  };
+
+  const wrapper = shallow(<CardDetail card={cardVals}/>);
+
+  expect(wrapper.find('card')).toBeDefined();
+
   expect(wrapper).toMatchSnapshot();
-  //expect(tree).toMatchSnapshot();
-});
 
+  });
+
+/*
+  test('it renders each item in the card', () =>{
+    const cardVals = {
+      title:'Test',
+      artist:'Smith',
+      thumbnail_image:"https://images-na.ssl-images-amazon.com/images/I/61McsadO1OL.jpg",
+      image:"https://i.imgur.com/K3KJ3w4h.jpg",
+      url: 'google.ca'
+    };
+
+    const wrapper = shallow(<CardDetail card={cardVals}/>);
+    expect(wrapper.find('card')).toBeDefined();
+
+    expect(wrapper.find('CardDetail').get(0).props).toEqual('Smith');
+
+});
+*/
 
 /* Test idea modified from
 https://medium.com/@indvinoth/react-native-how-to-test-onpress-event-using-jest-1cb19115863e
