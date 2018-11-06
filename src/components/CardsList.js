@@ -1,35 +1,56 @@
+import _ from 'lodash';
 import React, { Component } from 'react';
-import { ScrollView } from 'react-native';
-import axios from 'axios';
+import { connect } from 'react-redux';
+import { ListView } from 'react-native';
+import { fetchMyCards } from '../actions';
+import ListItem from './ListItem';
 
-import CardDetail from './CardDetail';
 
-//class based component
 class CardsList extends Component {
-  // Initial state
-  state = { cards : [] };
-  //Instantly called when this component is called
   componentWillMount() {
-    {/* Get request for hhtps we can maybe use this to load all the cards?*/}
-    axios.get('https://rallycoding.herokuapp.com/api/music_albums')
-    .then(response => this.setState({ cards: response.data }));
+    this.props.fetchMyCards();
+
+    this.createDataSource(this.props);
   }
-  //{card.title} is how you get a variable from jsx between the text tags
-  renderCards() {
-    {/* The key in the text tag is how we keep track of what we are rendering! this can be useful
-      for when we have a database ready to choose what cards to render on the screen*/}
-  return this.state.cards.map(card =>
-    <CardDetail key={card.title} card={card} />
-    );
+
+  componentWillReceiveProps(nextProps) {
+    //NextProps are the set of props that will come in Next render cycle
+    //this.props is the old set of props of this class
+    this.createDataSource(nextProps);
   }
-  render() {
-    console.log(this.state);
+//Expected to call with a set of properties with myCards
+createDataSource({ myCards }) {
+   const ds = new ListView.DataSource({
+     rowHasChanged: (r1, r2) => r1 !== r2
+   });
+
+   this.dataSource = ds.cloneWithRows(myCards);
+ }
+
+renderRow(myCards) {
+  return <ListItem myCards={myCards} />;
+}
+
+  render () {
+
     return (
-      <ScrollView>
-        {this.renderCards()}
-      </ScrollView>
+      <ListView
+        enableEmptySections
+        dataSource={this.dataSource}
+        renderRow={this.renderRow}
+      />
     );
   }
 }
 
-export default CardsList;
+const mapStateToProps = state => {
+  const myCards = _.map(state.myCards, (val,uid) => {
+    return { ...val, uid } ;
+    //For each value pair we are running this function for each value
+    // using the key of uid and pushing it all into one object to result
+    // into an object of card + its Id
+  });
+  return {myCards} ;
+};
+
+export default connect(mapStateToProps, {fetchMyCards}) (CardsList);
