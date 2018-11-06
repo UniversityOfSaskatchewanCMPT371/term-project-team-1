@@ -19,10 +19,16 @@
   "devDependencies": {
     "babel-jest": "23.6.0",
     "jest": "23.6.0",
-    "metro-react-native-babel-preset": "0.49.0",
-    "react-test-renderer": "16.6.0-alpha.8af6728"
+    "jsdom": "^13.0.0",
+    "jsdom-global": "^3.0.2",
+    "metro-react-native-babel-preset": "0.48.1",
+    "react-dom": "^16.5.2",
+    "react-test-renderer": "16.6.0-alpha.8af6728",
+    "sinon": "^7.0.0"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "react-native",
+    "setupTestFrameworkScriptFile": "<rootDir>/src/setupTests.js",
+    "testEnvironment": "jsdom"
   }
 }
