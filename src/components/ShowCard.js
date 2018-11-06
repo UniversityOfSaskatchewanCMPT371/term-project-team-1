@@ -8,7 +8,6 @@ class ShowCard extends Component {
 
     onButtonPress () {
         const { name, bio, pro, image, link } = this.props;
-
     }
 
   render () {
@@ -25,13 +24,19 @@ class ShowCard extends Component {
 
         <CardSectionStyle>
           <Text style={styles.titleStyle}>
+              {bio}
+          </Text>
+        </CardSectionStyle>
+
+        <CardSectionStyle>
+          <Text style={styles.titleStyle}>
               {link}
           </Text>
         </CardSectionStyle>
 
         <CardSectionStyle>
         <Text style={styles.titleStyle}>
-            Image should be displayed here having trouble importing it 
+            Image should be displayed here having trouble importing it
         </Text>
         </CardSectionStyle>
 
