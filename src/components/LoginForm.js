@@ -4,16 +4,20 @@ import { connect } from 'react-redux';
 import { emailChanged, passwordChanged, loginUser } from '../actions'
 import { CardStyle, CardSectionStyle, Input,Button, Spinner } from './common';
 
+//What the user sees when they first open the application,
+//had to add some sort of authentication
+// due to the seperation of the users info or else all users
+//will retrieve all information from the database at all times
 class LoginForm extends Component {
-
+//Looks in the input field of the email and awaits any text to be written
   onEmailChange (text) {
     this.props.emailChanged(text);
   }
-
+  //Looks in the input field of the password and awaits any text to be written
   onPasswordChange (text) {
     this.props.passwordChanged(text);
   }
-
+//This is attached to the button login, once the user has input the correct information it attempts to login
   onButtonPress () {
     const { email , password } = this.props;
 

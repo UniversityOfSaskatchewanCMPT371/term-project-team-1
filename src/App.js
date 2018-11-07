@@ -7,9 +7,12 @@ import reducers from './reducers';
 import LoginForm from './components/LoginForm';
 import MyRouter from './Router' ;
 
-
+//This component is where the application starts due to the ref of this file in
+// our main index.js file
 class App extends Component {
 
+//built in function that automatically is called when the application runs
+//so I found it fitting to set the database connection when the app is first opened
   componentWillMount() {
     const config = {
       apiKey: 'AIzaSyByzuFR21QSm1c7nj6JSNpdRRqMzkQsI1c',
@@ -21,6 +24,8 @@ class App extends Component {
   };
   firebase.initializeApp(config);
 }
+//In the render method I return my router for navigation purposes which I assume I have created
+// along with the built in provider tag to allow me to use the redux library to use the controller model approach
   render () {
     const store = createStore(reducers, {} , applyMiddleware(ReduxThunk));
 

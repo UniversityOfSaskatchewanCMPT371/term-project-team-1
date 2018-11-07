@@ -5,7 +5,8 @@ import { ListView } from 'react-native';
 import { fetchMyCards } from '../actions';
 import ListItem from './ListItem';
 
-
+//Display the items that were retrieved as an object and splice them information
+// rows and adds styling to each one to allow the user to seperate between every card
 class CardsList extends Component {
   componentWillMount() {
     this.props.fetchMyCards();

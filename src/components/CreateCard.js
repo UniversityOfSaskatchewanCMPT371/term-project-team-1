@@ -4,8 +4,15 @@ import { connect } from 'react-redux' ;
 import { cardUpdate, cardCreate } from '../actions';
 import { CardStyle, CardSectionStyle, Input, Button } from './common'
 
+
+
+//This functionality should be called when the QR scanner is scanning but
+// at the moment I have connected that functionality to an add button to simulate
+// the ability to "addACard" to a users deck
 class CreateCard extends Component {
 
+//This is the functionality that was added to the "Add" button which ads a card
+//to the users deck but, this logic will be called onQRScanned rather than a save button in the future
     onButtonPress () {
         const { name, bio, pro, image, link } = this.props;
 

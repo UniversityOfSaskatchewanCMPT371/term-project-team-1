@@ -8,6 +8,8 @@ import {
   LOGIN_USER_START
 } from './types';
 
+//This action passes the payload text , so it notifies the reducers
+// everytime the user inputs anything in to the email field within the login form
 export const emailChanged = (text) => {
   return {
     type: EMAIL_CHANGED,
@@ -15,7 +17,8 @@ export const emailChanged = (text) => {
   };
 };
 
-// takes in a text object
+//This action passes the payload text , so it notifies the reducers
+// everytime the user inputs anything in to the password field within the login form
 export const passwordChanged = (text) => {
   return {
     type: PASSWORD_CHANGED,

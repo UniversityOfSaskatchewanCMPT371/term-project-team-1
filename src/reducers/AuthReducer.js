@@ -1,3 +1,6 @@
+//This reducer is in charge of anything to do with authentication,
+// It has a case switch form login fail or success
+//and for user input on the login screen
 import {
   EMAIL_CHANGED,
   PASSWORD_CHANGED,
@@ -5,6 +8,11 @@ import {
   LOGIN_USER_FAIL,
   LOGIN_USER_START
 } from '../actions/types'
+
+//The initial state of the login form is everything is empty and the loading attribute
+// which is true to show the spinner component is false, this assumption is within the
+// the initalState constant allowing me to reset the form depending on what actions have been performed
+// depending on the type passed through our actions
 const INITIAL_STATE = {
   email: '', password: '', user: null , error: '' , loading: false
  };
