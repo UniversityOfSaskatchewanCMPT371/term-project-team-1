@@ -1,5 +1,5 @@
 {
-  "name": "Testproj2",
+  "name": "dbProj",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -7,25 +7,34 @@
     "test": "jest"
   },
   "dependencies": {
+    "firebase": "5.0.3",
+    "lodash": "^4.17.11",
     "react": "16.6.0-alpha.8af6728",
-    "react-native": "0.57.3"
+    "react-native": "0.57.4",
+    "react-native-router-flux": "^4.0.5",
+    "react-redux": "^5.1.0",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.1.2",
-    "axios": "^0.18.0",
-    "babel-core": "^7.0.0-bridge.0",
-    "babel-jest": "^23.6.0",
-    "coveralls": "^3.0.2",
+    "@babel/core": "^7.1.5",
+    "babel-core": "^6.26.3",
+    "babel-jest": "23.6.0",
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.6.0",
+    "enzyme-to-json": "^3.3.4",
     "jest": "23.6.0",
+    "jsdom": "^13.0.0",
+    "jsdom-global": "^3.0.2",
     "metro-react-native-babel-preset": "0.48.1",
     "react-dom": "^16.5.2",
     "react-test-renderer": "16.6.0-alpha.8af6728",
+    "redux-mock-store": "^1.5.3",
     "sinon": "^7.0.0"
   },
   "jest": {
     "preset": "react-native",
-    "setupTestFrameworkScriptFile": "<rootDir>/src/setupTests.js"
+    "setupTestFrameworkScriptFile": "<rootDir>/src/setupTests.js",
+    "testEnvironment": "jsdom"
   }
 }

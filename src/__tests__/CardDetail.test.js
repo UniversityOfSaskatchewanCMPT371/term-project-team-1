@@ -1,4 +1,4 @@
-import CardDetail from '../CardDetail';
+import {CardDetail} from '../components/common/CardDetail';
 import { shallow,configure,mount } from 'enzyme';
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -14,10 +14,8 @@ configure({ adapter: new Adapter() });
 
 
 test('renders correctly', () => {
-  /*you can't write these out individually; you have to call
-  the entire card structure and then destructure it, giving it
-  each piece. Would be nice if we could call each piece separately
-  (functions, whatever) because this kind of sucks.*/
+  /*I've just created a const of all the values and called the card with these values
+  This is a lot cleaner then that other gross way of doing things.*/
 
   const cardVals = {
     title:'Test',
@@ -35,8 +33,8 @@ test('renders correctly', () => {
 
   });
 
-/*
-  test('it renders each item in the card', () =>{
+
+  test('it puts each item in the card properly', () =>{
     const cardVals = {
       title:'Test',
       artist:'Smith',
@@ -44,14 +42,26 @@ test('renders correctly', () => {
       image:"https://i.imgur.com/K3KJ3w4h.jpg",
       url: 'google.ca'
     };
-
-    const wrapper = shallow(<CardDetail card={cardVals}/>);
-    expect(wrapper.find('card')).toBeDefined();
-
-    expect(wrapper.find('CardDetail').get(0).props).toEqual('Smith');
-
+/*You have to get the props of whatever is mounted
+then you gotta call that prop even though you just got it
+then you gotta get the prop of that prop, even though you called props to get the props of the wrapper
+I literally spent 3 hours trying to figure this out.
+This doesn't make any logical sense. Whatever.
+--Jesse */
+    const wrapper = mount(<CardDetail card={cardVals}/>);
+    const myProps = wrapper.props();
+    /*used this to test log values to see what I was getting
+    Now am using it to show all of the card when I test */
+    console.log(myProps.card);
+    //console.log(myProps.card.title);
+    expect(myProps.card.title).toEqual('Test');
+    expect(myProps.card.artist).toEqual('Smith');
+    expect(myProps.card.thumbnail_image).toEqual("https://images-na.ssl-images-amazon.com/images/I/61McsadO1OL.jpg");
+    expect(myProps.card.image).toEqual("https://i.imgur.com/K3KJ3w4h.jpg");
+    expect(myProps.card.url).toEqual('google.ca');
+    //console.log(wrapper.contains(CardDetail,'title'));
 });
-*/
+
 
 /* Test idea modified from
 https://medium.com/@indvinoth/react-native-how-to-test-onpress-event-using-jest-1cb19115863e

@@ -1,14 +1,15 @@
-import App from './index';
+import {CardSectionStyle} from '../components/common/CardSectionStyle';
 import { shallow,configure } from 'enzyme';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
 import Adapter from 'enzyme-adapter-react-16';
 configure({ adapter: new Adapter() });
+//Imports to get Enzyme to work if possible -> will work on later
 
 
 test('renders correctly', () => {
-    //Add Rendering for the starting piece.
-    //This is different because this is of type 'App' which isn't a component, which means enzyme doesn't work.
-    //This will need some other way to test it.
+  const wrapper = shallow(<CardSectionStyle/>);
+  expect(wrapper).toMatchSnapshot();
+  //expect(tree).toMatchSnapshot();
 });
