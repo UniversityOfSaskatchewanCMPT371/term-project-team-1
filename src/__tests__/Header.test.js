@@ -1,4 +1,4 @@
-import Header from '../Header';
+import {Header} from '../components/common/Header';
 import { shallow,configure,mount } from 'enzyme';
 import React from 'react';
 import ReactDOM from 'react-dom';

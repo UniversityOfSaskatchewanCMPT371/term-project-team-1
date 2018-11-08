@@ -1,4 +1,4 @@
-import CardDetail from '../CardDetail';
+import {CardDetail} from '../components/common/CardDetail';
 import { shallow,configure,mount } from 'enzyme';
 import React from 'react';
 import ReactDOM from 'react-dom';

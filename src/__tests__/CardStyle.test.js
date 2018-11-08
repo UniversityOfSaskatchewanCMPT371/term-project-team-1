@@ -1,4 +1,4 @@
-import CardStyle from '../CardStyle';
+import {CardStyle} from '../components/common/CardStyle';
 import { shallow,configure } from 'enzyme';
 import React from 'react';
 import ReactDOM from 'react-dom';
