@@ -32,4 +32,4 @@ class CardsList extends Component {
   }
 }
 
-export default CardsList;
+export {CardsList};

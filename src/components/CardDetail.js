@@ -1,8 +1,9 @@
 import React from 'react';
 import { Text,View,Image, Linking  } from 'react-native';
-import CardStyle from './CardStyle';
+/*import CardStyle from './CardStyle';
 import CardSectionStyle from './CardSectionStyle';
-import Button from './Button';
+import Button from './Button';*/
+import {CardStyle,CardSectionStyle,Button} from './index.js';
 
 //What details are we going to render on the screen ?
 const CardDetail = ({card}) => {
@@ -74,4 +75,4 @@ const styles = {
 };
 
 
-export default CardDetail;
+export {CardDetail};

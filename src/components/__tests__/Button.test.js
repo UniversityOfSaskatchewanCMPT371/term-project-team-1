@@ -1,4 +1,4 @@
-import Button from '../Button';
+import {Button} from '../index.js';
 import { shallow,configure } from 'enzyme';
 import React from 'react';
 import ReactDOM from 'react-dom';
