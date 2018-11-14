@@ -35,4 +35,4 @@ const styles = {
 };
 
 //making it available to other parts of the app
-export {Header} ;
+export { Header };

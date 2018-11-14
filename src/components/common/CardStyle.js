@@ -27,4 +27,4 @@ const styles = {
     marginTop: 10
   }
 };
-export {CardStyle};
+export  { CardStyle };

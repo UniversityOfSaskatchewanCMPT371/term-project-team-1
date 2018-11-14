@@ -1,4 +1,4 @@
-import {CardStyle} from '../index.js';
+import {CardStyle} from '../common/index.js';
 import { shallow,configure } from 'enzyme';
 import React from 'react';
 import ReactDOM from 'react-dom';
