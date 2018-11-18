@@ -1,23 +1,20 @@
-# Tell Travis to use Node 10.13 instead of Node 11
+# Tell Travis to use the Node 10.13 because node-gyp hates Node 11
 language: node_js
 node_js:
   - "10.13"
 
 # Cache the node_modules directory between builds instead of re-compiling the whole directory each time you commit.
 cache:
+  yarn: true
   directories:
     - node_modules
-
-env:
-  - CXX=g++-4.8
-services:
-  - mongodb 
 
 before_install:
   - npm update
 
 # Tells Travis which commands to run. Commands run in a succession, and if a command fails (i.e. exits with anything but 0), 
 # the build is marked as failed. Failed builds do not get deployed. Note that Travis knows to npm install already.
+
 script:
   # Linting is disabled for now until we find out how to style our shit
   # - npm run lint
