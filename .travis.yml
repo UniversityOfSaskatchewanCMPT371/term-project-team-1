@@ -1,7 +1,7 @@
-# Tell Travis to use the latest (stable) version of NodeJS
+# Tell Travis to use Node 10.13 instead of Node 11
 language: node_js
 node_js:
-  - "stable"
+  - "10.13"
 
 # Cache the node_modules directory between builds instead of re-compiling the whole directory each time you commit.
 cache:
