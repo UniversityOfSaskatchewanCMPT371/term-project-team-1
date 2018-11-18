@@ -1,7 +1,7 @@
 # Tell Travis to use the latest (stable) version of NodeJS
 language: node_js
 node_js:
-  - "stable"
+  - "node"
 
 # Cache the node_modules directory between builds instead of re-compiling the whole directory each time you commit.
 # cache:
@@ -15,7 +15,6 @@ cache:
 
 before_install:
   - npm update
-  - yarn update
 
 # Tells Travis which commands to run. Commands run in a succession, and if a command fails (i.e. exits with anything but 0), 
 # the build is marked as failed. Failed builds do not get deployed. Note that Travis knows to npm install already.
