@@ -1,0 +1,479 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ShowCard
+    myCards={
+      Object {
+        "bio": "Smith",
+        "image": "https://i.imgur.com/K3KJ3w4h.jpg",
+        "link": "google.ca",
+        "name": "Smith",
+        "pro": "https://images-na.ssl-images-amazon.com/images/I/61McsadO1OL.jpg",
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "children": Array [
+        <CardSectionStyle>
+          <Component
+            style={
+              Object {
+                "fontSize": 18,
+                "paddingLeft": 15,
+              }
+            }
+          >
+            https://images-na.ssl-images-amazon.com/images/I/61McsadO1OL.jpg
+             
+            : 
+             
+            Smith
+          </Component>
+        </CardSectionStyle>,
+        <CardSectionStyle>
+          <Component
+            style={
+              Object {
+                "fontSize": 18,
+                "paddingLeft": 15,
+              }
+            }
+          >
+            Smith
+          </Component>
+        </CardSectionStyle>,
+        <CardSectionStyle>
+          <Component
+            style={
+              Object {
+                "fontSize": 18,
+                "paddingLeft": 15,
+              }
+            }
+          >
+            google.ca
+          </Component>
+        </CardSectionStyle>,
+        <CardSectionStyle>
+          <Component
+            style={
+              Object {
+                "fontSize": 18,
+                "paddingLeft": 15,
+              }
+            }
+          >
+            Image should be displayed here having trouble importing it
+          </Component>
+        </CardSectionStyle>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "children": <Component
+            style={
+              Object {
+                "fontSize": 18,
+                "paddingLeft": 15,
+              }
+            }
+          >
+            https://images-na.ssl-images-amazon.com/images/I/61McsadO1OL.jpg
+             
+            : 
+             
+            Smith
+          </Component>,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              "https://images-na.ssl-images-amazon.com/images/I/61McsadO1OL.jpg",
+              " ",
+              ": ",
+              " ",
+              "Smith",
+            ],
+            "style": Object {
+              "fontSize": 18,
+              "paddingLeft": 15,
+            },
+          },
+          "ref": null,
+          "rendered": Array [
+            "https://images-na.ssl-images-amazon.com/images/I/61McsadO1OL.jpg",
+            " ",
+            ": ",
+            " ",
+            "Smith",
+          ],
+          "type": [Function],
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "children": <Component
+            style={
+              Object {
+                "fontSize": 18,
+                "paddingLeft": 15,
+              }
+            }
+          >
+            Smith
+          </Component>,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": "Smith",
+            "style": Object {
+              "fontSize": 18,
+              "paddingLeft": 15,
+            },
+          },
+          "ref": null,
+          "rendered": "Smith",
+          "type": [Function],
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "children": <Component
+            style={
+              Object {
+                "fontSize": 18,
+                "paddingLeft": 15,
+              }
+            }
+          >
+            google.ca
+          </Component>,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": "google.ca",
+            "style": Object {
+              "fontSize": 18,
+              "paddingLeft": 15,
+            },
+          },
+          "ref": null,
+          "rendered": "google.ca",
+          "type": [Function],
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "children": <Component
+            style={
+              Object {
+                "fontSize": 18,
+                "paddingLeft": 15,
+              }
+            }
+          >
+            Image should be displayed here having trouble importing it
+          </Component>,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": "Image should be displayed here having trouble importing it",
+            "style": Object {
+              "fontSize": 18,
+              "paddingLeft": 15,
+            },
+          },
+          "ref": null,
+          "rendered": "Image should be displayed here having trouble importing it",
+          "type": [Function],
+        },
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "children": Array [
+          <CardSectionStyle>
+            <Component
+              style={
+                Object {
+                  "fontSize": 18,
+                  "paddingLeft": 15,
+                }
+              }
+            >
+              https://images-na.ssl-images-amazon.com/images/I/61McsadO1OL.jpg
+               
+              : 
+               
+              Smith
+            </Component>
+          </CardSectionStyle>,
+          <CardSectionStyle>
+            <Component
+              style={
+                Object {
+                  "fontSize": 18,
+                  "paddingLeft": 15,
+                }
+              }
+            >
+              Smith
+            </Component>
+          </CardSectionStyle>,
+          <CardSectionStyle>
+            <Component
+              style={
+                Object {
+                  "fontSize": 18,
+                  "paddingLeft": 15,
+                }
+              }
+            >
+              google.ca
+            </Component>
+          </CardSectionStyle>,
+          <CardSectionStyle>
+            <Component
+              style={
+                Object {
+                  "fontSize": 18,
+                  "paddingLeft": 15,
+                }
+              }
+            >
+              Image should be displayed here having trouble importing it
+            </Component>
+          </CardSectionStyle>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": <Component
+              style={
+                Object {
+                  "fontSize": 18,
+                  "paddingLeft": 15,
+                }
+              }
+            >
+              https://images-na.ssl-images-amazon.com/images/I/61McsadO1OL.jpg
+               
+              : 
+               
+              Smith
+            </Component>,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                "https://images-na.ssl-images-amazon.com/images/I/61McsadO1OL.jpg",
+                " ",
+                ": ",
+                " ",
+                "Smith",
+              ],
+              "style": Object {
+                "fontSize": 18,
+                "paddingLeft": 15,
+              },
+            },
+            "ref": null,
+            "rendered": Array [
+              "https://images-na.ssl-images-amazon.com/images/I/61McsadO1OL.jpg",
+              " ",
+              ": ",
+              " ",
+              "Smith",
+            ],
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": <Component
+              style={
+                Object {
+                  "fontSize": 18,
+                  "paddingLeft": 15,
+                }
+              }
+            >
+              Smith
+            </Component>,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": "Smith",
+              "style": Object {
+                "fontSize": 18,
+                "paddingLeft": 15,
+              },
+            },
+            "ref": null,
+            "rendered": "Smith",
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": <Component
+              style={
+                Object {
+                  "fontSize": 18,
+                  "paddingLeft": 15,
+                }
+              }
+            >
+              google.ca
+            </Component>,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": "google.ca",
+              "style": Object {
+                "fontSize": 18,
+                "paddingLeft": 15,
+              },
+            },
+            "ref": null,
+            "rendered": "google.ca",
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": <Component
+              style={
+                Object {
+                  "fontSize": 18,
+                  "paddingLeft": 15,
+                }
+              }
+            >
+              Image should be displayed here having trouble importing it
+            </Component>,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": "Image should be displayed here having trouble importing it",
+              "style": Object {
+                "fontSize": 18,
+                "paddingLeft": 15,
+              },
+            },
+            "ref": null,
+            "rendered": "Image should be displayed here having trouble importing it",
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;

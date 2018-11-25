@@ -14,24 +14,34 @@ configure({ adapter: new Adapter() });
 
 
 test('renders correctly', () => {
+  const myCard = {
+    name:'Test',
+    bio:'Smith',
+    pro:"https://images-na.ssl-images-amazon.com/images/I/61McsadO1OL.jpg",
+    image:"https://i.imgur.com/K3KJ3w4h.jpg",
+    link: 'google.ca'
+  };
+
+  const wrapper = shallow(<ShowCard myCards= {
+  { name: "Smith",
+    bio:'Smith',
+    pro:"https://images-na.ssl-images-amazon.com/images/I/61McsadO1OL.jpg",
+    image:"https://i.imgur.com/K3KJ3w4h.jpg",
+    link: 'google.ca'}}/>);
+  expect(wrapper).toMatchSnapshot();
+  //expect(tree).toMatchSnapshot();
+});
+
   /*I've just created a const of all the values and called the card with these values
   This is a lot cleaner then that other gross way of doing things.*/
 
-  /*(const cardVals = {
-    title:'Test',
-    artist:'Smith',
-    thumbnail_image:"https://images-na.ssl-images-amazon.com/images/I/61McsadO1OL.jpg",
-    image:"https://i.imgur.com/K3KJ3w4h.jpg",
-    url: 'google.ca'
-  };*/
+
 
   //const wrapper = shallow(<ShowCard/>);
 
   //expect(wrapper.find('card')).toBeDefined();
 
   //expect(wrapper).toMatchSnapshot();
-
-  });
 
 
   /*test('it puts each item in the card properly', () =>{
