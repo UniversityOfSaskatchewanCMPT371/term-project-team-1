@@ -27,7 +27,7 @@ test('renders correctly', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
-test('it puts each item in the card crrectly', () => {
+test('it puts each item in the card correctly', () => {
 
 
   const wrapper = shallow(<ShowCard myCards= {
