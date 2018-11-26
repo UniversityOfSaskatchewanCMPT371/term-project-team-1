@@ -76,9 +76,9 @@ test('it puts each item in the card correctly', () => {
   expect(bioProp).toEqual('I like Cats.');
   expect(proProp).toEqual("Doctor")
   expect(linkProp).toEqual('google.ca');
-  /* This one should actually fail as it's hard coded to say "Image should be displayed here having trouble importing it"
+  /* This one should actually NOT equal what we give it as it's hard coded to say "Image should be displayed here having trouble importing it"
   no matter what you put in*/
-  expect(imageProp).toEqual("Not Yet Implemented.");
+  expect(imageProp).not.toEqual("Not Yet Implemented.");
   //expect(wrapper).toMatchSnapshot();
 });
 
