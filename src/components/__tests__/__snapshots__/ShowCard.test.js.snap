@@ -6,11 +6,11 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <ShowCard
     myCards={
       Object {
-        "bio": "Smith",
-        "image": "https://i.imgur.com/K3KJ3w4h.jpg",
+        "bio": "I like Cats.",
+        "image": "Not Yet Implemented.",
         "link": "google.ca",
-        "name": "Smith",
-        "pro": "https://images-na.ssl-images-amazon.com/images/I/61McsadO1OL.jpg",
+        "name": "Test",
+        "pro": "Doctor",
       }
     }
   />,
@@ -37,11 +37,11 @@ ShallowWrapper {
               }
             }
           >
-            https://images-na.ssl-images-amazon.com/images/I/61McsadO1OL.jpg
+            Doctor
              
             : 
              
-            Smith
+            Test
           </Component>
         </CardSectionStyle>,
         <CardSectionStyle>
@@ -53,7 +53,7 @@ ShallowWrapper {
               }
             }
           >
-            Smith
+            I like Cats.
           </Component>
         </CardSectionStyle>,
         <CardSectionStyle>
@@ -97,11 +97,11 @@ ShallowWrapper {
               }
             }
           >
-            https://images-na.ssl-images-amazon.com/images/I/61McsadO1OL.jpg
+            Doctor
              
             : 
              
-            Smith
+            Test
           </Component>,
         },
         "ref": null,
@@ -111,11 +111,11 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "children": Array [
-              "https://images-na.ssl-images-amazon.com/images/I/61McsadO1OL.jpg",
+              "Doctor",
               " ",
               ": ",
               " ",
-              "Smith",
+              "Test",
             ],
             "style": Object {
               "fontSize": 18,
@@ -124,11 +124,11 @@ ShallowWrapper {
           },
           "ref": null,
           "rendered": Array [
-            "https://images-na.ssl-images-amazon.com/images/I/61McsadO1OL.jpg",
+            "Doctor",
             " ",
             ": ",
             " ",
-            "Smith",
+            "Test",
           ],
           "type": [Function],
         },
@@ -147,7 +147,7 @@ ShallowWrapper {
               }
             }
           >
-            Smith
+            I like Cats.
           </Component>,
         },
         "ref": null,
@@ -156,14 +156,14 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "children": "Smith",
+            "children": "I like Cats.",
             "style": Object {
               "fontSize": 18,
               "paddingLeft": 15,
             },
           },
           "ref": null,
-          "rendered": "Smith",
+          "rendered": "I like Cats.",
           "type": [Function],
         },
         "type": [Function],
@@ -255,11 +255,11 @@ ShallowWrapper {
                 }
               }
             >
-              https://images-na.ssl-images-amazon.com/images/I/61McsadO1OL.jpg
+              Doctor
                
               : 
                
-              Smith
+              Test
             </Component>
           </CardSectionStyle>,
           <CardSectionStyle>
@@ -271,7 +271,7 @@ ShallowWrapper {
                 }
               }
             >
-              Smith
+              I like Cats.
             </Component>
           </CardSectionStyle>,
           <CardSectionStyle>
@@ -315,11 +315,11 @@ ShallowWrapper {
                 }
               }
             >
-              https://images-na.ssl-images-amazon.com/images/I/61McsadO1OL.jpg
+              Doctor
                
               : 
                
-              Smith
+              Test
             </Component>,
           },
           "ref": null,
@@ -329,11 +329,11 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "children": Array [
-                "https://images-na.ssl-images-amazon.com/images/I/61McsadO1OL.jpg",
+                "Doctor",
                 " ",
                 ": ",
                 " ",
-                "Smith",
+                "Test",
               ],
               "style": Object {
                 "fontSize": 18,
@@ -342,11 +342,11 @@ ShallowWrapper {
             },
             "ref": null,
             "rendered": Array [
-              "https://images-na.ssl-images-amazon.com/images/I/61McsadO1OL.jpg",
+              "Doctor",
               " ",
               ": ",
               " ",
-              "Smith",
+              "Test",
             ],
             "type": [Function],
           },
@@ -365,7 +365,7 @@ ShallowWrapper {
                 }
               }
             >
-              Smith
+              I like Cats.
             </Component>,
           },
           "ref": null,
@@ -374,14 +374,14 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
-              "children": "Smith",
+              "children": "I like Cats.",
               "style": Object {
                 "fontSize": 18,
                 "paddingLeft": 15,
               },
             },
             "ref": null,
-            "rendered": "Smith",
+            "rendered": "I like Cats.",
             "type": [Function],
           },
           "type": [Function],

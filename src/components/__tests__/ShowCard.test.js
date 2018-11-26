@@ -14,26 +14,75 @@ configure({ adapter: new Adapter() });
 
 
 test('renders correctly', () => {
-  const myCard = {
-    name:'Test',
-    bio:'Smith',
-    pro:"https://images-na.ssl-images-amazon.com/images/I/61McsadO1OL.jpg",
-    image:"https://i.imgur.com/K3KJ3w4h.jpg",
-    link: 'google.ca'
-  };
+
 
   const wrapper = shallow(<ShowCard myCards= {
-  { name: "Smith",
-    bio:'Smith',
-    pro:"https://images-na.ssl-images-amazon.com/images/I/61McsadO1OL.jpg",
-    image:"https://i.imgur.com/K3KJ3w4h.jpg",
+    /*I've just created a const of all the values and called the card with these values.
+    I have to call it */
+  { name:'Test',
+    bio:'I like Cats.',
+    pro:"Doctor",
+    image:"Not Yet Implemented.",
     link: 'google.ca'}}/>);
   expect(wrapper).toMatchSnapshot();
-  //expect(tree).toMatchSnapshot();
 });
 
-  /*I've just created a const of all the values and called the card with these values
-  This is a lot cleaner then that other gross way of doing things.*/
+test('it puts each item in the card crrectly', () => {
+
+
+  const wrapper = shallow(<ShowCard myCards= {
+    /*I've just created a const of all the values and called the card with these values.
+    I'm calling it like this for now as this works, but later I'd like to test and see if it works with putting them in one card and testing like that.
+    --Jesse   */
+  { name:'Test',
+    bio:'I like Cats.',
+    pro:"Doctor",
+    image:"Not Yet Implemented.",
+    link: 'google.ca'}}/>);
+  const myProps = wrapper.props();
+  console.log(myProps.children);
+
+  const nameProp = myProps.children[0].props.children.props.children[4];
+  /*name Log*/
+  console.log("Name =" + myProps.children[0].props.children.props.children[4]);
+
+  const bioProp = myProps.children[1].props.children.props.children;
+  /*bio Log*/
+  console.log("Bio =" + myProps.children[1].props.children.props.children);
+
+  const proProp = myProps.children[0].props.children.props.children[0];
+  /*profession log*/
+  console.log("Profession =" + myProps.children[0].props.children.props.children[0]);
+
+  const imageProp = myProps.children[3].props.children.props.children;
+  /*image log*/
+  console.log("Image =" + myProps.children[3].props.children.props.children);
+
+  const linkProp = myProps.children[2].props.children.props.children;
+  /*image log*/
+  console.log("Link =" + myProps.children[2].props.children.props.children);
+
+  /*
+  You have to get the props of whatever is mounted
+  then you gotta call that prop even though you just got it
+  then you gotta get the prop of that prop.
+  Note: You have to do some 'deep diving' into each child to get the prop to compare to.
+  I'll console.log() these to show it's actually pulling out what I need, and put them each in their own prop.
+  There has to be a better way then just deep reaching into each of these to get one prop; I'll investigate later if I have time.
+  /*
+
+  --Jesse*/
+  expect(nameProp).toEqual('Test');
+  expect(bioProp).toEqual('I like Cats.');
+  expect(proProp).toEqual("Doctor")
+  expect(linkProp).toEqual('google.ca');
+  /* This one should actually fail as it's hard coded to say "Image should be displayed here having trouble importing it"
+  no matter what you put in*/
+  expect(imageProp).toEqual("Not Yet Implemented.");
+  //expect(wrapper).toMatchSnapshot();
+});
+
+
 
 
 
@@ -43,23 +92,6 @@ test('renders correctly', () => {
 
   //expect(wrapper).toMatchSnapshot();
 
-
-  /*test('it puts each item in the card properly', () =>{
-    const cardVals = {
-      title:'Test',
-      artist:'Smith',
-      thumbnail_image:"https://images-na.ssl-images-amazon.com/images/I/61McsadO1OL.jpg",
-      image:"https://i.imgur.com/K3KJ3w4h.jpg",
-      url: 'google.ca'
-    };
-/*You have to get the props of whatever is mounted
-then you gotta call that prop even though you just got it
-then you gotta get the prop of that prop, even though you called props to get the props of the wrapper
-I literally spent 3 hours trying to figure this out.
-This doesn't make any logical sense. Whatever.
---Jesse
-    const wrapper = mount(<CardDetail card={cardVals}/>);
-    const myProps = wrapper.props();
     /*used this to test log values to see what I was getting
     Now am using it to show all of the card when I test
     console.log(myProps.card);
@@ -72,17 +104,3 @@ This doesn't make any logical sense. Whatever.
     //console.log(wrapper.contains(CardDetail,'title'));
 });
 */
-
-/* Test idea modified from
-https://medium.com/@indvinoth/react-native-how-to-test-onpress-event-using-jest-1cb19115863e
-thanks!
-Note: Doesn't work.... I'll have to figure out how to test the button.
-*/
-/*test('Button Works Correctly', () => {
-  const onPressEvent = jest.fn();
-  onPressEvent.mockReturnValue('Link on press');
-  const wrapper = shallow(<CardDetail card={"Test","Artist",null,null,"google.ca"} onPress={onPressEvent}/>);
-
-  wrapper.find(Button).first().props().onPress();
-  expect(onPressEvent.mock.calls.length).toBe(1);
-});*/
