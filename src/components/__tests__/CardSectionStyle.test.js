@@ -5,7 +5,8 @@ import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
 import Adapter from 'enzyme-adapter-react-16';
 configure({ adapter: new Adapter() });
-//Imports to get Enzyme to work if possible -> will work on later
+// need the adapter for enzyme to work properly; without an adapter configured
+// Enzyme WILL throw errors.
 
 
 test('renders correctly', () => {
