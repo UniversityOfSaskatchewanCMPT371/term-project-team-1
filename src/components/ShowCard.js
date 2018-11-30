@@ -1,7 +1,8 @@
 import React, { Component } from 'react' ;
-import { Picker, Text } from 'react-native';
+import { Picker, Text, Image } from 'react-native';
 import { connect } from 'react-redux' ;
 import { cardUpdate, cardCreate } from '../actions';
+import Hyperlink from 'react-native-hyperlink' ;
 import { CardStyle, CardSectionStyle, Input, Button } from './common'
 
 //Retrieve the properties of a single card as an object and
@@ -37,10 +38,11 @@ class ShowCard extends Component {
         </CardSectionStyle>
 
         <CardSectionStyle>
-        <Text style={styles.titleStyle}>
-            Image should be displayed here having trouble importing it
-        </Text>
-        </CardSectionStyle>
+        <Image
+         style ={styles.mainImageStyle}
+         source= {{uri: image }}
+         />
+      </CardSectionStyle>
 
       </CardStyle>
     );
@@ -50,6 +52,11 @@ const styles = {
   titleStyle: {
     fontSize:18,
     paddingLeft:15
+  },
+  mainImageStyle: {
+    height: 300,
+    flex: 1,
+    width: null
   }
 };
 const mapStateToProps = (state) => {
