@@ -2,7 +2,6 @@ import React, { Component } from 'react' ;
 import { Picker, Text, Image } from 'react-native';
 import { connect } from 'react-redux' ;
 import { cardUpdate, cardCreate } from '../actions';
-import Hyperlink from 'react-native-hyperlink' ;
 import { CardStyle, CardSectionStyle, Input, Button } from './common'
 
 //Retrieve the properties of a single card as an object and
