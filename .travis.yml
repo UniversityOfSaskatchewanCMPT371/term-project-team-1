@@ -17,7 +17,7 @@ before_install:
 # the build is marked as failed. Failed builds do not get deployed. Note that Travis knows to npm install already.
 
 script:
-  # Linting is disabled for now until we find out how to style our shit
+  # Linting is disabled for now
   # - npm run lint
   - yarn test
   - jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage

@@ -83,7 +83,7 @@ HealthDeck uses the following technologies and open source projects to work prop
 * [React Native] - duh
 
 ## Versioning
-We use [SemVer](http://semver.org/) for versioning. Tags are in the process of being refactored, but in the meantime, to check the versions available, see the [tags on our repository](https://github.com/UniversityOfSaskatchewanCMPT371/term-project-team-1/tags).
+We use [SemVer](http://semver.org/) for versioning. To check the versions available, see the [tags on our repository](https://github.com/UniversityOfSaskatchewanCMPT371/term-project-team-1/tags).
 
 ## Authors
 
