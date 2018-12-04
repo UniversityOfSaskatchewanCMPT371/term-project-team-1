@@ -10,6 +10,7 @@ import LoginForm from './components/LoginForm';
 import CardsList from './components/CardsList';
 import CreateCard from './components/CreateCard';
 import ShowCard from './components/ShowCard';
+import ScanScreen from './components/ScanScreen';
 
 //This component takes nothing but expects all the defined js files
 // within the Scene tags to exist
@@ -23,12 +24,13 @@ const RouterComponent = () => {
         <Scene key="main">
           <Scene
           rightTitle="Add"
-          onRight = { () => Actions.createCard()}
+          onRight = { () => Actions.scanScreen()}
           key="cardsList"
           component = {CardsList}
           title="Your Cards"
           initial
            />
+          <Scene key="scanScreen" component={ScanScreen} title="Scan Screen"  />
           <Scene key="createCard" component={CreateCard} title="Create Card" />
           <Scene key="showCard" component={ShowCard} title="Display Single Card" />
         </Scene>

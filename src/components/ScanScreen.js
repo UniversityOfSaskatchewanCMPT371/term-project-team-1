@@ -58,4 +58,4 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('default', () => ScanScreen);
+export default ScanScreen;
