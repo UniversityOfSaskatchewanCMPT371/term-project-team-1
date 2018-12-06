@@ -9,30 +9,20 @@ import {
   TouchableOpacity,
   Linking,
 } from 'react-native';
-
+import { fetchCard } from '../actions';
+import { connect } from 'react-redux';
 import QRCodeScanner from 'react-native-qrcode-scanner';
 
 class ScanScreen extends Component {
   onSuccess(e) {
-    Linking
-      .openURL(e.data)
-      .catch(err => console.error('An error occured', err));
+    console.log(this.props.fetchCard(e));
   }
 
   render() {
     return (
       <QRCodeScanner
         onRead={this.onSuccess.bind(this)}
-        topContent={
-          <Text style={styles.centerText}>
-            Go to <Text style={styles.textBold}>wikipedia.org/wiki/QR_code</Text> on your computer and scan the QR code.
-          </Text>
-        }
-        bottomContent={
-          <TouchableOpacity style={styles.buttonTouchable}>
-            <Text style={styles.buttonText}>OK. Got it!</Text>
-          </TouchableOpacity>
-        }
+
       />
     );
   }
@@ -58,4 +48,9 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ScanScreen;
+const mapStateToProps = (state) => {
+  const { name, bio, pro, image, link } = state.creationForm;
+
+  return { name, bio, pro, image, link } ;
+}
+export default connect(mapStateToProps, {fetchCard}) (ScanScreen);

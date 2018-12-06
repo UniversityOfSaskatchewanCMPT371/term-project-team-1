@@ -31,7 +31,7 @@ const RouterComponent = () => {
           initial
            />
           <Scene key="scanScreen" component={ScanScreen} title="Scan Screen"  />
-          <Scene key="createCard" component={CreateCard} title="Create Card" />
+          <Scene key="createCard" component={CreateCard} title="Create Card"  />
           <Scene key="showCard" component={ShowCard} title="Display Single Card" />
         </Scene>
       </Scene>
