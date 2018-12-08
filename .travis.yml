@@ -1,6 +1,7 @@
-matrix:
+jobs:
   include:
-    - language: node_js
+    - stage: Test and lint
+      language: node_js
       # Tell Travis to use the Node 10.13 because node-gyp hates Node 11
       node_js:
         - "10.13"
@@ -10,8 +11,6 @@ matrix:
         yarn: true
         directories:
           - node_modules
-
-      
        
       # Updated from npm update as because npm breaks dependencies
       before_install:
@@ -40,7 +39,8 @@ matrix:
       #     tags: true
       #     repo: UniversityOfSaskatchewanCMPT371/term-project-team-1
 
-    - language: android
+    - stage: Deploy to Android
+      language: android
       jdk: oraclejdk8
       sudo: required
 
