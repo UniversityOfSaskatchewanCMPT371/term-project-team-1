@@ -9,11 +9,14 @@ cache:
   directories:
     - node_modules
 
+env:
+  global:
+    secure: 2rxlYio6MqFRL4WKkVn6DkoSWPn9THh8D2+xhxoAmUm5pYJIiz5UYVlDOGpy0Hr3TYyrUlVIlrAJsOOOeX69xF29NoWXZCe3Ru7mgpCyvrd195WdbxU0qO9nDMXC8Y9Fa1W/ZOO2rRL8SatoBUxNieoh/qb5HhgX8xA45a3OlLNYQFpLPWqCqzzQJzZGt4/xMGNwAViyM6xm5lezz4I6gOAAk4hS7XeZcTABiLEmu3yK3rFrcYD/WA3u5yDnSfaRzZAORaZ3gKQvl0EBgbJEfP5qvneBkvPS3q7jLeX05q3jwNB7y1/PxANy1/anQqD7RHcmBM1k8dcdvdmudgOAhXR/1KLvShUDAHVIrvBMgPcpioQaD0GpQmYXk7ckCYqe3b8zHvJMSfHuavCgnJHz+bjdwGNOd3Ipom1cym4ii7F+t7xtf9L5ucdZpAO7AR5GUUHZ3Rmz/i5RtlyFEBVSfgRbEwkK1YAorTI665+uLoYZ82q6A49wlFBvhXuTzDilrREKzVoFGE2n4aY8kH0F0s2txHcDxF9/tqOGZcR5d8BBWdSCuyKmAGNqG/6TkmmmBq0nQf8E1Ssz7NlEHrDucmiEBfB2NB6e6asAd6hGZpiUEbdkYFaLVKFwq7cwee+C4Fu7DgkP1fIwtLvDVZMlapQe48mrGlKZi0VqMGvZW/U=
+
 # Decrypt the keystore file and make sure we have the latest version of yarn. 
 # Updated from npm update as because npm breaks dependencies
 before_install:
-  - openssl aes-256-cbc -K $encrypted_40d199f203aa_key -iv $encrypted_40d199f203aa_iv
-    -in healthdeck-droid.jks.enc -out healthdeck-droid.jks -d
+  - openssl aes-256-cbc -k "$super_secret_password" -in healthdeck-droid.jks.enc -out healthdeck-droid.jks -d
   - yarn upgrade
 
 # Tells Travis which commands to run. Commands run in a succession, and if a command fails (i.e. exits with anything but 0), 
@@ -37,4 +40,3 @@ deploy:
   file: /home/travis/build/UniversityOfSaskatchewanCMPT371/term-project-team-1/app/build/outputs/apk/release/*
   on:
     tags: true
-   
