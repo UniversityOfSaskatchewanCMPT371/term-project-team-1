@@ -1,43 +1,152 @@
-# Tell Travis to use the Node 10.13 because node-gyp hates Node 11
-language: node_js
-node_js:
-  - "10.13"
+matrix:
+  include:
+    - language: node_js
+      # Tell Travis to use the Node 10.13 because node-gyp hates Node 11
+      node_js:
+        - "10.13"
 
-# Cache the node_modules directory between builds instead of re-compiling the whole directory each time you commit.
-cache:
-  yarn: true
-  directories:
-    - node_modules
+      # Cache the node_modules directory between builds instead of re-compiling the whole directory each time you commit.
+      cache:
+        yarn: true
+        directories:
+          - node_modules
 
-env:
-  global:
-    secure: 2rxlYio6MqFRL4WKkVn6DkoSWPn9THh8D2+xhxoAmUm5pYJIiz5UYVlDOGpy0Hr3TYyrUlVIlrAJsOOOeX69xF29NoWXZCe3Ru7mgpCyvrd195WdbxU0qO9nDMXC8Y9Fa1W/ZOO2rRL8SatoBUxNieoh/qb5HhgX8xA45a3OlLNYQFpLPWqCqzzQJzZGt4/xMGNwAViyM6xm5lezz4I6gOAAk4hS7XeZcTABiLEmu3yK3rFrcYD/WA3u5yDnSfaRzZAORaZ3gKQvl0EBgbJEfP5qvneBkvPS3q7jLeX05q3jwNB7y1/PxANy1/anQqD7RHcmBM1k8dcdvdmudgOAhXR/1KLvShUDAHVIrvBMgPcpioQaD0GpQmYXk7ckCYqe3b8zHvJMSfHuavCgnJHz+bjdwGNOd3Ipom1cym4ii7F+t7xtf9L5ucdZpAO7AR5GUUHZ3Rmz/i5RtlyFEBVSfgRbEwkK1YAorTI665+uLoYZ82q6A49wlFBvhXuTzDilrREKzVoFGE2n4aY8kH0F0s2txHcDxF9/tqOGZcR5d8BBWdSCuyKmAGNqG/6TkmmmBq0nQf8E1Ssz7NlEHrDucmiEBfB2NB6e6asAd6hGZpiUEbdkYFaLVKFwq7cwee+C4Fu7DgkP1fIwtLvDVZMlapQe48mrGlKZi0VqMGvZW/U=
+      
+       
+      # Updated from npm update as because npm breaks dependencies
+      before_install:
+        - yarn upgrade
 
-# Decrypt the keystore file and make sure we have the latest version of yarn. 
-# Updated from npm update as because npm breaks dependencies
-before_install:
-  - openssl aes-256-cbc -k "$super_secret_password" -in healthdeck-droid.jks.enc -out healthdeck-droid.jks -d
-  - yarn upgrade
+      # Tells Travis which commands to run. Commands run in a succession, and if a command fails (i.e. exits with anything but 0), 
+      # the build is marked as failed. Failed builds do not get deployed. Note that Travis knows to npm install already.
 
-# Tells Travis which commands to run. Commands run in a succession, and if a command fails (i.e. exits with anything but 0), 
-# the build is marked as failed. Failed builds do not get deployed. Note that Travis knows to npm install already.
+      script:
+        # Linting is disabled for now
+        # - yarn lint
+        
+        # Run the test suites. -u updates snapshots, --coverage runs the automated Enzyme coverage tests.
+        - yarn test -u --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
 
-script:
-  # Linting is disabled for now
-  # - yarn lint
-  
-  # Run the test suites. -u updates snapshots, --coverage runs the automated Enzyme coverage tests.
-  - yarn test -u --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
+      # # This is using Jay's encrypted Github API token, which has full access to the repo.
+      # deploy:
+      #   provider: releases
+      #   skip_cleanup: true
+      #   overwrite: true
+      #   api_key:
+      #     secure: Rf3WKYGZ4I+JWn46jl6FIOO2R8Q2IBKm456+4dxXDuJNKGILL6XTRW4krY14tbf5rC1I/sWzI/Nk1n9s52zjhkeoVR8Q3WHjS/QG164B86pjgWJ18cDEPijA2cClR2kZub8fP4jpUaNkW9MD48A3h7xbfO3CjtG9HglaSGplzeZuyyEZCEFTXLbvppirv3zjgg8TVP2wnqMSxSxaNTVRhbu7RMkOcEdkUvvuQb8bDnrQKUKrJs9t1UIsHhOhFjOdEcNb5ErFilNKzmQZ2Xg5PTeYUaWYNNwnDNRbDMm8D/p4t5/0GDtLm4jO53mdeeOeHDc96iIU+dVAYLuflij9ORTcRNIe1jhwYfQNxRbND6hVgDCzcNJzU0goU8kLm5eWcFqJNjGIkp4EBGLaXwrcZ6fQsvv4YKx0Mg12zRyrFWUqGdvuBKGFmOHT12s4LOJsWLFBoW2hnh7yXfLi5fpTNywDuh+nelb/Kd3zjX9E4Day2Y0q1w+Kcb1Ec/GC4EqZ1rqUnaVZ5cYG9xRZdC0de8mogBHshgOfdym5jGt/HV5HPlTBf2WPIdKSiNZTYm6AFuknVlaJry/eSTeJUin5Xn+sVkBjVFWHSVo7oIYugC0wGmb6JhNQBZ0m9Mgbp/zzb2JSXCmcyZ2sX7/qAOFU6LFIw8i+XX6OHgOgNkGED08=
+      #   file_glob: true
+      #   file: /home/travis/build/UniversityOfSaskatchewanCMPT371/term-project-team-1/app/build/outputs/apk/release/*
+      #   on:
+      #     tags: true
+      #     repo: UniversityOfSaskatchewanCMPT371/term-project-team-1
 
-# This is using Jay's encrypted Github API token, which has full access to the repo.
-deploy:
-  provider: releases
-  skip_cleanup: true
-  overwrite: true
-  api_key:
-    secure: Rf3WKYGZ4I+JWn46jl6FIOO2R8Q2IBKm456+4dxXDuJNKGILL6XTRW4krY14tbf5rC1I/sWzI/Nk1n9s52zjhkeoVR8Q3WHjS/QG164B86pjgWJ18cDEPijA2cClR2kZub8fP4jpUaNkW9MD48A3h7xbfO3CjtG9HglaSGplzeZuyyEZCEFTXLbvppirv3zjgg8TVP2wnqMSxSxaNTVRhbu7RMkOcEdkUvvuQb8bDnrQKUKrJs9t1UIsHhOhFjOdEcNb5ErFilNKzmQZ2Xg5PTeYUaWYNNwnDNRbDMm8D/p4t5/0GDtLm4jO53mdeeOeHDc96iIU+dVAYLuflij9ORTcRNIe1jhwYfQNxRbND6hVgDCzcNJzU0goU8kLm5eWcFqJNjGIkp4EBGLaXwrcZ6fQsvv4YKx0Mg12zRyrFWUqGdvuBKGFmOHT12s4LOJsWLFBoW2hnh7yXfLi5fpTNywDuh+nelb/Kd3zjX9E4Day2Y0q1w+Kcb1Ec/GC4EqZ1rqUnaVZ5cYG9xRZdC0de8mogBHshgOfdym5jGt/HV5HPlTBf2WPIdKSiNZTYm6AFuknVlaJry/eSTeJUin5Xn+sVkBjVFWHSVo7oIYugC0wGmb6JhNQBZ0m9Mgbp/zzb2JSXCmcyZ2sX7/qAOFU6LFIw8i+XX6OHgOgNkGED08=
-  file_glob: true
-  file: /home/travis/build/UniversityOfSaskatchewanCMPT371/term-project-team-1/app/build/outputs/apk/release/*
-  on:
-    tags: true
-    repo: UniversityOfSaskatchewanCMPT371/term-project-team-1
+    - language: android
+      jdk: oraclejdk8
+      sudo: required
+
+      # So that the cache isn't always uploaded
+      before_cache:
+        - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
+        - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+      cache:
+        directories:
+        - $HOME/.gradle/caches/
+        - $HOME/.gradle/wrapper/
+
+      # Declare constants. These values are taken from the project's build.gradle file.
+      env:
+        global:
+          - ANDROID_API=27
+          - EMULATOR_API=25
+          - ANDROID_BUILD_TOOLS=27.0.3
+          - ADB_INSTALL_TIMEOUT=5 # minutes
+
+          # Encrypted keystore password and key password
+          - secure: "h4k8DgAoH2E964nBCxPP86kT1hZCUuhx1UgpFKORcBVZqo9F6Zhs7ORjrVY/rZV5qzLe7p294p0CWl/odAviN9zLPTE1RcKCJqlj5t/00/eTj3GfiQ8k7Al/5xP3npjjgyqJ3K+RIv5p2ZkLQRFZ0x+zBzQAEK+nagLu9Eer2lUFK7hcAnif2QTHkOj2VyGK/EQyvgpiHipP3UQq2Ofwq9ExLZgmIX1Ftq1LoNIyY/B1jfAMYuw9PLLKNzgS1+Mb6StI2QgYLtVl8R/AfmX2W43gnmYxACenSuy9+7Tz9K7IIQ7Zllz+fILcaZQCRSBfJ9sswXSeP+gmuRtDUdD1tfu03EdG2DHCLBUNgbLPPRIipAtz9EyHhWF98wvNHSK7PMFEyy+QT6SOdR7oPP8c5u3sWs+PNKj6443Vq6AqEnXffQB1hxQL8WFp2fuMKu//SSJvudJGySlxx3zPQ+RIAnhi4GqgUmye3sol0Zcq+vkgqxY3Hq2TX4JjAfEdBtPPEvTN1CHGjQIZgrychcj1u2Ma8OI6gzXVyr3wCW7wThEAjHTzibMFMlS60oHKdq7JFFWq2s5vXiHnr5n/de9BJ2XDsRPYr20f0tqsTpmtnab4LCuNWRg9rwPj3jGKRimphEC7xwPG01waDncGfqAdaWQItANdHj8a6RuxMWhOGZA="
+          - secure: "eUkx/s2TJy7+jIJm0L9M6pSMrSFrCl6eV5rIsNcveND5BYjvmjCaMSjkmz5cIYh1g70GPwkHmKpsq0skoknoqpurKhBjkcWyc4+jmwtVVG/9xBhh59ExFQgDu6XjvwWYaL91VJFbOHOjJarbn3PR9l/mIJfx716VnaUlwC+p9rq6XEP5DdrAZP5GQgQ/aP1uAGdeInzH0vjkZJKMzoKo93uh74D4XMSk6fasSbOGNe5teJ3cmEqpZrvWwwZ692ld5JnfNfmTLk223g+a9+Ggp11zKTAiPHvvoTGOdBTWPzw8NvBhfsCIRNupfoHIDotFa2h9bS/aYQ/5C/vwSYJ86+ywTFhnRhcNh+4nAeniqJWMGD43q4ENGY3EP3ecw/jjGRTTkZ4Oq1aIdnxiJW1cKp4eL+CtbcuZSltvIN8O6vIkHMj2hmNQbaQHUUW9KyhqLHrDTJozn/UxZ2SRQne/taS8epgLDVnnvggVqd+9HO4Cfxmosx846u1UN4qY5ZdkB0cLsQxsy1lms1vp5/ydC88V5usaTMJru7yazddGD0f2BhqmAD9OOsPkGY6pgYQXh31TLSVD78KlywFTQReOuni3wqqnLk66GllPD2xJy7URuFyAq9ni1fTfDwsGTxdYpw303zdK6+r2UVKNLBt0IEsFOX8oUeT6lkjAeynsYBU="
+
+          # Encrypted password to decrypt keystore file
+          - secure: "2rxlYio6MqFRL4WKkVn6DkoSWPn9THh8D2+xhxoAmUm5pYJIiz5UYVlDOGpy0Hr3TYyrUlVIlrAJsOOOeX69xF29NoWXZCe3Ru7mgpCyvrd195WdbxU0qO9nDMXC8Y9Fa1W/ZOO2rRL8SatoBUxNieoh/qb5HhgX8xA45a3OlLNYQFpLPWqCqzzQJzZGt4/xMGNwAViyM6xm5lezz4I6gOAAk4hS7XeZcTABiLEmu3yK3rFrcYD/WA3u5yDnSfaRzZAORaZ3gKQvl0EBgbJEfP5qvneBkvPS3q7jLeX05q3jwNB7y1/PxANy1/anQqD7RHcmBM1k8dcdvdmudgOAhXR/1KLvShUDAHVIrvBMgPcpioQaD0GpQmYXk7ckCYqe3b8zHvJMSfHuavCgnJHz+bjdwGNOd3Ipom1cym4ii7F+t7xtf9L5ucdZpAO7AR5GUUHZ3Rmz/i5RtlyFEBVSfgRbEwkK1YAorTI665+uLoYZ82q6A49wlFBvhXuTzDilrREKzVoFGE2n4aY8kH0F0s2txHcDxF9/tqOGZcR5d8BBWdSCuyKmAGNqG/6TkmmmBq0nQf8E1Ssz7NlEHrDucmiEBfB2NB6e6asAd6hGZpiUEbdkYFaLVKFwq7cwee+C4Fu7DgkP1fIwtLvDVZMlapQe48mrGlKZi0VqMGvZW/U="
+
+
+
+
+      # Declare components to be incorporated. I imagine the camera would have to be here,
+      # which I'll consult with the dev team later
+      android:
+        components:
+          - tools
+          - platform-tools
+          - build-tools-$ANDROID_BUILD_TOOLS
+          - android-$ANDROID_API
+          - android-$EMULATOR_API_LEVEL
+          - extra-google-m2repository
+          - extra-android-m2repository # for design library
+          - addon-google_apis-google-19 # google play services
+          - sys-img-armeabi-v7a-addon-google_apis-google-$ANDROID_API_LEVEL
+          - sys-img-armeabi-v7a-addon-google_apis-google-$EMULATOR_API_LEVEL  
+
+       licenses:
+         - android-sdk-preview-license-.+
+         - android-sdk-license-.+
+         - google-gdk-license-.+
+
+
+      before_install:
+        # Decrypt the keystore file and make sure we have the latest version of yarn.
+        - openssl aes-256-cbc -k "$super_secret_password" -in healthdeck-droid.jks.enc -out healthdeck-droid.jks -d
+        # The following 3 lines will be uncommented if we are using ConstraintLayout.
+        # As per bug report on https://stackoverflow.com/questions/37615379/travis-ci-build-doesnt-work-with-android-constraint-layout/40144426#40144426
+        # I'll consult with Mo to verify if this is the case
+        # - mkdir "$ANDROID_HOME/licenses" || true
+        # - echo -e "\n8933bad161af4178b1185d1a37fbf41ea5269c55" > "$ANDROID_HOME/licenses/android-sdk-license"
+        # - echo -e "\n84831b9409646a918e30573bab4c9c91346d8abd" > "$ANDROID_HOME/licenses/android-sdk-preview-license"
+        # Execute permissions for Gradle wrapper
+        - chmod +x gradlew
+        # The line below shouldnt be added unless we are getting "Install missing components using SDK manager"
+        # Source: https://medium.com/@oldergod/constraint-layout-and-circleci-travis-d50342696d2
+        # - ./gradlew dependencies || true 
+
+      # Define the creation and initialization of the Android emulator
+      before_script:
+        - echo no | android create avd --force -n test -t android-21 --abi armeabi-v7a
+        - emulator -avd test -no-skin -no-audio -no-window &
+        - android-wait-for-emulator
+        - adb shell input keyevent 82 &
+
+      # Command ./gradlew connectedCheck executes instrumentation tests located in src/androidTests/
+      # This may break.
+      script:
+        - "./gradlew clean build connectedCheck -PdisablePreDex --stacktrace"
+
+      before_deploy:
+        - cp $TRAVIS_BUILD_DIR/healthdeck-droid.jks $HOME
+        - cd app/build/outputs/apk/
+        - jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore $HOME/healthdeck-droid.jks -storepass $storepass -keypass $keypass app-release-unsigned.apk key0
+
+        # Verification
+        - jarsigner -verify app-release-unsigned.apk
+        - "${ANDROID_HOME}/build-tools/24.0.2/zipalign -v 4 app-release-unsigned.apk HealthDeck.apk"
+
+      # This is using Jay's encrypted Github API token, which has full access to the repo.
+      deploy:
+        provider: releases
+        skip_cleanup: true
+        overwrite: true
+        file_glob: true
+        file: HealthDeck.apk
+        api_key:
+          secure: Rf3WKYGZ4I+JWn46jl6FIOO2R8Q2IBKm456+4dxXDuJNKGILL6XTRW4krY14tbf5rC1I/sWzI/Nk1n9s52zjhkeoVR8Q3WHjS/QG164B86pjgWJ18cDEPijA2cClR2kZub8fP4jpUaNkW9MD48A3h7xbfO3CjtG9HglaSGplzeZuyyEZCEFTXLbvppirv3zjgg8TVP2wnqMSxSxaNTVRhbu7RMkOcEdkUvvuQb8bDnrQKUKrJs9t1UIsHhOhFjOdEcNb5ErFilNKzmQZ2Xg5PTeYUaWYNNwnDNRbDMm8D/p4t5/0GDtLm4jO53mdeeOeHDc96iIU+dVAYLuflij9ORTcRNIe1jhwYfQNxRbND6hVgDCzcNJzU0goU8kLm5eWcFqJNjGIkp4EBGLaXwrcZ6fQsvv4YKx0Mg12zRyrFWUqGdvuBKGFmOHT12s4LOJsWLFBoW2hnh7yXfLi5fpTNywDuh+nelb/Kd3zjX9E4Day2Y0q1w+Kcb1Ec/GC4EqZ1rqUnaVZ5cYG9xRZdC0de8mogBHshgOfdym5jGt/HV5HPlTBf2WPIdKSiNZTYm6AFuknVlaJry/eSTeJUin5Xn+sVkBjVFWHSVo7oIYugC0wGmb6JhNQBZ0m9Mgbp/zzb2JSXCmcyZ2sX7/qAOFU6LFIw8i+XX6OHgOgNkGED08=
+        on:
+          tags: true
+          repo: UniversityOfSaskatchewanCMPT371/term-project-team-1
+          jdk: oraclejdk8
+
+
+
+
+
+
+
+
+

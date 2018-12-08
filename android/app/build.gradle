@@ -163,7 +163,10 @@ android {
 
     // end APK packager
 
-
+    // Disables the build crashing when linting errors.
+    lintOptions {
+        abortOnError false
+    }
 
 }
 
