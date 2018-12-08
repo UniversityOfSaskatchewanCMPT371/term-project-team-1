@@ -80,7 +80,7 @@ HealthDeck uses the following technologies and open source projects to work prop
 
 * [Jest] and [Enzyme] - for testing 
 * [Firebase] - for database access
-* [React Native] - duh
+* [React Native]
 
 ## Versioning
 We use [SemVer](http://semver.org/) for versioning. To check the versions available, see the [tags on our repository](https://github.com/UniversityOfSaskatchewanCMPT371/term-project-team-1/tags).
