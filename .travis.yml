@@ -34,9 +34,10 @@ deploy:
   provider: releases
   skip_cleanup: true
   overwrite: true
-  api_key: 
-    secure: affe6a50e9582316b672ad8ed5bc3043d6920338
+  api_key:
+    secure: Rf3WKYGZ4I+JWn46jl6FIOO2R8Q2IBKm456+4dxXDuJNKGILL6XTRW4krY14tbf5rC1I/sWzI/Nk1n9s52zjhkeoVR8Q3WHjS/QG164B86pjgWJ18cDEPijA2cClR2kZub8fP4jpUaNkW9MD48A3h7xbfO3CjtG9HglaSGplzeZuyyEZCEFTXLbvppirv3zjgg8TVP2wnqMSxSxaNTVRhbu7RMkOcEdkUvvuQb8bDnrQKUKrJs9t1UIsHhOhFjOdEcNb5ErFilNKzmQZ2Xg5PTeYUaWYNNwnDNRbDMm8D/p4t5/0GDtLm4jO53mdeeOeHDc96iIU+dVAYLuflij9ORTcRNIe1jhwYfQNxRbND6hVgDCzcNJzU0goU8kLm5eWcFqJNjGIkp4EBGLaXwrcZ6fQsvv4YKx0Mg12zRyrFWUqGdvuBKGFmOHT12s4LOJsWLFBoW2hnh7yXfLi5fpTNywDuh+nelb/Kd3zjX9E4Day2Y0q1w+Kcb1Ec/GC4EqZ1rqUnaVZ5cYG9xRZdC0de8mogBHshgOfdym5jGt/HV5HPlTBf2WPIdKSiNZTYm6AFuknVlaJry/eSTeJUin5Xn+sVkBjVFWHSVo7oIYugC0wGmb6JhNQBZ0m9Mgbp/zzb2JSXCmcyZ2sX7/qAOFU6LFIw8i+XX6OHgOgNkGED08=
   file_glob: true
   file: /home/travis/build/UniversityOfSaskatchewanCMPT371/term-project-team-1/app/build/outputs/apk/release/*
   on:
     tags: true
+    repo: UniversityOfSaskatchewanCMPT371/term-project-team-1
