@@ -70,15 +70,19 @@ ShallowWrapper {
         </CardSectionStyle>,
         <CardSectionStyle>
           <Component
-            style={
+            source={
               Object {
-                "fontSize": 18,
-                "paddingLeft": 15,
+                "uri": "Not Yet Implemented.",
               }
             }
-          >
-            Image should be displayed here having trouble importing it
-          </Component>
+            style={
+              Object {
+                "flex": 1,
+                "height": 300,
+                "width": null,
+              }
+            }
+          />
         </CardSectionStyle>,
       ],
     },
@@ -208,15 +212,19 @@ ShallowWrapper {
         "nodeType": "function",
         "props": Object {
           "children": <Component
-            style={
+            source={
               Object {
-                "fontSize": 18,
-                "paddingLeft": 15,
+                "uri": "Not Yet Implemented.",
               }
             }
-          >
-            Image should be displayed here having trouble importing it
-          </Component>,
+            style={
+              Object {
+                "flex": 1,
+                "height": 300,
+                "width": null,
+              }
+            }
+          />,
         },
         "ref": null,
         "rendered": Object {
@@ -224,14 +232,17 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "children": "Image should be displayed here having trouble importing it",
+            "source": Object {
+              "uri": "Not Yet Implemented.",
+            },
             "style": Object {
-              "fontSize": 18,
-              "paddingLeft": 15,
+              "flex": 1,
+              "height": 300,
+              "width": null,
             },
           },
           "ref": null,
-          "rendered": "Image should be displayed here having trouble importing it",
+          "rendered": null,
           "type": [Function],
         },
         "type": [Function],
@@ -288,15 +299,19 @@ ShallowWrapper {
           </CardSectionStyle>,
           <CardSectionStyle>
             <Component
-              style={
+              source={
                 Object {
-                  "fontSize": 18,
-                  "paddingLeft": 15,
+                  "uri": "Not Yet Implemented.",
                 }
               }
-            >
-              Image should be displayed here having trouble importing it
-            </Component>
+              style={
+                Object {
+                  "flex": 1,
+                  "height": 300,
+                  "width": null,
+                }
+              }
+            />
           </CardSectionStyle>,
         ],
       },
@@ -426,15 +441,19 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "children": <Component
-              style={
+              source={
                 Object {
-                  "fontSize": 18,
-                  "paddingLeft": 15,
+                  "uri": "Not Yet Implemented.",
                 }
               }
-            >
-              Image should be displayed here having trouble importing it
-            </Component>,
+              style={
+                Object {
+                  "flex": 1,
+                  "height": 300,
+                  "width": null,
+                }
+              }
+            />,
           },
           "ref": null,
           "rendered": Object {
@@ -442,14 +461,17 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
-              "children": "Image should be displayed here having trouble importing it",
+              "source": Object {
+                "uri": "Not Yet Implemented.",
+              },
               "style": Object {
-                "fontSize": 18,
-                "paddingLeft": 15,
+                "flex": 1,
+                "height": 300,
+                "width": null,
               },
             },
             "ref": null,
-            "rendered": "Image should be displayed here having trouble importing it",
+            "rendered": null,
             "type": [Function],
           },
           "type": [Function],
