@@ -26,7 +26,7 @@ jobs:
         # Run the test suites. -u updates snapshots, --coverage runs the automated Enzyme coverage tests.
         - yarn test -u --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
 
-      # # This is using Jay's encrypted Github API token, which has full access to the repo.
+      # This is using Jay's encrypted Github API token, which has full access to the repo.
       # deploy:
       #   provider: releases
       #   skip_cleanup: true
@@ -50,8 +50,8 @@ jobs:
         - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
       cache:
         directories:
-        - $HOME/.gradle/caches/
-        - $HOME/.gradle/wrapper/
+          - $HOME/.gradle/caches/
+          - $HOME/.gradle/wrapper/
 
       # Declare constants. These values are taken from the project's build.gradle file.
       env:
