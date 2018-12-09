@@ -28,7 +28,7 @@ const initState = {
     Reducer(AuthReducer).expect({type: 'NOT-EXISTING'}).toReturnState(initState)
   });
 
-  /*it('should store changed email states', () =>{
+  it('should store changed email states', () =>{
     const loginInfo = {...initState,email:'b'};
     //emailInfo = {email: 'blank@test.com'};
     const action = {type: actions.EMAIL_CHANGED,loginInfo};
@@ -36,7 +36,7 @@ const initState = {
           type: ACTION_STORE_PHONE_NUMBERS,
           payload: { emailInfo },
         });
-  });*/
+  });
   
   it('should correctly set login for user', () =>{
 	  loginConnect = {...initState,loading:true,error:''};
