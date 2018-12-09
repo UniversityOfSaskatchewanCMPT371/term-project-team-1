@@ -61,12 +61,14 @@ jobs:
           - ANDROID_BUILD_TOOLS=27.0.3
           - ADB_INSTALL_TIMEOUT=5 # minutes
 
+          # Encrypted password to decrypt keystore file
+          - secure: "fA3fUB2/Gcs5x/k6GGR9Op6dGSxT8klwiZpUy2nmvEmz71rHc4/Gk4xM1vFAzUf3xH5KyB2q+qW/zSvWgCoF2m18BtmnKUB7jdnc9yaP1nXamivs+twd5yf2AUV+KKcYy9MwlSvG3B0bz+1bbAx1y4/pg0ZI9lZFSb0ry8Zwe6sShkL8Sj9c00aDlpY99Ot47/LPS7eQLQ1S7/arzm5P38CVTkpC9Y9TJHwwdJXDtQNa0DYQkvMnQ3vacoKIZOmoyfsfcj2rnF8fyX9tU0fLb9G/qu67/cyuM+Y0VUSbWIwFqusR38J1mU7IvfVdIOQ12tkdHcsjsR6jCG/nlmbqM/LLcWLM6usrveWNvMIQR78yzv7Mzslqa1Cy86raxdKJXuRsaj8Sy7zFDAm/+HqPTw1mQWZnYGdRfX16wThetDM99WUZbNFI+NNTn9XTDzmyEAtvXbu93guR+oGqAeV65DvHL+4/rKYVD0fBQ/+frKcPjajE9Q1oI5QI6+97uIhTC87sKgm7dOcwzJs57iOC2C4fUsK7vE0ltu4W8ruLnkcuI95hecoiCCYtUljnELkMLM4SUbjlRLSDF0uDqOUZMwsYc8ZpvVCLRRj7zkHO9bk6do0YNKlfaoCbmZ68Zlm/GJ2ImWRwE1Uc53cDOKpwZDMnrmuADrwbjxPZ0Q581us="
+          
           # Encrypted keystore password and key password
           - secure: "h4k8DgAoH2E964nBCxPP86kT1hZCUuhx1UgpFKORcBVZqo9F6Zhs7ORjrVY/rZV5qzLe7p294p0CWl/odAviN9zLPTE1RcKCJqlj5t/00/eTj3GfiQ8k7Al/5xP3npjjgyqJ3K+RIv5p2ZkLQRFZ0x+zBzQAEK+nagLu9Eer2lUFK7hcAnif2QTHkOj2VyGK/EQyvgpiHipP3UQq2Ofwq9ExLZgmIX1Ftq1LoNIyY/B1jfAMYuw9PLLKNzgS1+Mb6StI2QgYLtVl8R/AfmX2W43gnmYxACenSuy9+7Tz9K7IIQ7Zllz+fILcaZQCRSBfJ9sswXSeP+gmuRtDUdD1tfu03EdG2DHCLBUNgbLPPRIipAtz9EyHhWF98wvNHSK7PMFEyy+QT6SOdR7oPP8c5u3sWs+PNKj6443Vq6AqEnXffQB1hxQL8WFp2fuMKu//SSJvudJGySlxx3zPQ+RIAnhi4GqgUmye3sol0Zcq+vkgqxY3Hq2TX4JjAfEdBtPPEvTN1CHGjQIZgrychcj1u2Ma8OI6gzXVyr3wCW7wThEAjHTzibMFMlS60oHKdq7JFFWq2s5vXiHnr5n/de9BJ2XDsRPYr20f0tqsTpmtnab4LCuNWRg9rwPj3jGKRimphEC7xwPG01waDncGfqAdaWQItANdHj8a6RuxMWhOGZA="
           - secure: "eUkx/s2TJy7+jIJm0L9M6pSMrSFrCl6eV5rIsNcveND5BYjvmjCaMSjkmz5cIYh1g70GPwkHmKpsq0skoknoqpurKhBjkcWyc4+jmwtVVG/9xBhh59ExFQgDu6XjvwWYaL91VJFbOHOjJarbn3PR9l/mIJfx716VnaUlwC+p9rq6XEP5DdrAZP5GQgQ/aP1uAGdeInzH0vjkZJKMzoKo93uh74D4XMSk6fasSbOGNe5teJ3cmEqpZrvWwwZ692ld5JnfNfmTLk223g+a9+Ggp11zKTAiPHvvoTGOdBTWPzw8NvBhfsCIRNupfoHIDotFa2h9bS/aYQ/5C/vwSYJ86+ywTFhnRhcNh+4nAeniqJWMGD43q4ENGY3EP3ecw/jjGRTTkZ4Oq1aIdnxiJW1cKp4eL+CtbcuZSltvIN8O6vIkHMj2hmNQbaQHUUW9KyhqLHrDTJozn/UxZ2SRQne/taS8epgLDVnnvggVqd+9HO4Cfxmosx846u1UN4qY5ZdkB0cLsQxsy1lms1vp5/ydC88V5usaTMJru7yazddGD0f2BhqmAD9OOsPkGY6pgYQXh31TLSVD78KlywFTQReOuni3wqqnLk66GllPD2xJy7URuFyAq9ni1fTfDwsGTxdYpw303zdK6+r2UVKNLBt0IEsFOX8oUeT6lkjAeynsYBU="
 
-          # Encrypted password to decrypt keystore file
-          - secure: "fA3fUB2/Gcs5x/k6GGR9Op6dGSxT8klwiZpUy2nmvEmz71rHc4/Gk4xM1vFAzUf3xH5KyB2q+qW/zSvWgCoF2m18BtmnKUB7jdnc9yaP1nXamivs+twd5yf2AUV+KKcYy9MwlSvG3B0bz+1bbAx1y4/pg0ZI9lZFSb0ry8Zwe6sShkL8Sj9c00aDlpY99Ot47/LPS7eQLQ1S7/arzm5P38CVTkpC9Y9TJHwwdJXDtQNa0DYQkvMnQ3vacoKIZOmoyfsfcj2rnF8fyX9tU0fLb9G/qu67/cyuM+Y0VUSbWIwFqusR38J1mU7IvfVdIOQ12tkdHcsjsR6jCG/nlmbqM/LLcWLM6usrveWNvMIQR78yzv7Mzslqa1Cy86raxdKJXuRsaj8Sy7zFDAm/+HqPTw1mQWZnYGdRfX16wThetDM99WUZbNFI+NNTn9XTDzmyEAtvXbu93guR+oGqAeV65DvHL+4/rKYVD0fBQ/+frKcPjajE9Q1oI5QI6+97uIhTC87sKgm7dOcwzJs57iOC2C4fUsK7vE0ltu4W8ruLnkcuI95hecoiCCYtUljnELkMLM4SUbjlRLSDF0uDqOUZMwsYc8ZpvVCLRRj7zkHO9bk6do0YNKlfaoCbmZ68Zlm/GJ2ImWRwE1Uc53cDOKpwZDMnrmuADrwbjxPZ0Q581us="
+          
 
       # Declare components to be incorporated. I imagine the camera would have to be here,
       # which I'll consult with the dev team later
@@ -89,7 +91,7 @@ jobs:
           - google-gdk-license-.+
 
       before_install:
-        # Decrypt the keystore file and make sure we have the latest version of yarn.
+        # Decrypt the keystore file
         - openssl aes-256-cbc -k "$keystore_access_password" -in healthdeck-droid.jks.enc -out healthdeck-droid.jks -d
         # The following 3 lines will be uncommented if we are using ConstraintLayout.
         # As per bug report on https://stackoverflow.com/questions/37615379/travis-ci-build-doesnt-work-with-android-constraint-layout/40144426#40144426
