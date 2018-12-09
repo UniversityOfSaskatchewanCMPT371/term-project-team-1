@@ -68,9 +68,6 @@ jobs:
           # Encrypted password to decrypt keystore file
           - secure: "2rxlYio6MqFRL4WKkVn6DkoSWPn9THh8D2+xhxoAmUm5pYJIiz5UYVlDOGpy0Hr3TYyrUlVIlrAJsOOOeX69xF29NoWXZCe3Ru7mgpCyvrd195WdbxU0qO9nDMXC8Y9Fa1W/ZOO2rRL8SatoBUxNieoh/qb5HhgX8xA45a3OlLNYQFpLPWqCqzzQJzZGt4/xMGNwAViyM6xm5lezz4I6gOAAk4hS7XeZcTABiLEmu3yK3rFrcYD/WA3u5yDnSfaRzZAORaZ3gKQvl0EBgbJEfP5qvneBkvPS3q7jLeX05q3jwNB7y1/PxANy1/anQqD7RHcmBM1k8dcdvdmudgOAhXR/1KLvShUDAHVIrvBMgPcpioQaD0GpQmYXk7ckCYqe3b8zHvJMSfHuavCgnJHz+bjdwGNOd3Ipom1cym4ii7F+t7xtf9L5ucdZpAO7AR5GUUHZ3Rmz/i5RtlyFEBVSfgRbEwkK1YAorTI665+uLoYZ82q6A49wlFBvhXuTzDilrREKzVoFGE2n4aY8kH0F0s2txHcDxF9/tqOGZcR5d8BBWdSCuyKmAGNqG/6TkmmmBq0nQf8E1Ssz7NlEHrDucmiEBfB2NB6e6asAd6hGZpiUEbdkYFaLVKFwq7cwee+C4Fu7DgkP1fIwtLvDVZMlapQe48mrGlKZi0VqMGvZW/U="
 
-
-
-
       # Declare components to be incorporated. I imagine the camera would have to be here,
       # which I'll consult with the dev team later
       android:
@@ -86,11 +83,10 @@ jobs:
           - sys-img-armeabi-v7a-addon-google_apis-google-$ANDROID_API_LEVEL
           - sys-img-armeabi-v7a-addon-google_apis-google-$EMULATOR_API_LEVEL  
 
-       licenses:
-         - android-sdk-preview-license-.+
-         - android-sdk-license-.+
-         - google-gdk-license-.+
-
+        licenses:
+          - android-sdk-preview-license-.+
+          - android-sdk-license-.+
+          - google-gdk-license-.+
 
       before_install:
         # Decrypt the keystore file and make sure we have the latest version of yarn.
@@ -141,12 +137,3 @@ jobs:
           tags: true
           repo: UniversityOfSaskatchewanCMPT371/term-project-team-1
           jdk: oraclejdk8
-
-
-
-
-
-
-
-
-
