@@ -38,7 +38,9 @@
     "setupTestFrameworkScriptFile": "<rootDir>/src/setupTests.js",
     "testEnvironment": "jsdom",
     "transformIgnorePatterns": [
-     "node_modules/(?!(jest-)?react-native|react-navigation)"
-   ]
+      "node_modules/(?!(jest-)?react-native|react-navigation)"
+    ],
+    "collectCoverageFrom": ["src/**/*.{js,jsx}"],
+    "verbose": true
   }
 }

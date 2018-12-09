@@ -134,6 +134,40 @@ android {
             }
         }
     }
+
+
+    // Android config settings for Travis CI APK installation. 
+    // @author Jay
+
+    signingConfigs {
+        release
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+
+    def isRunningOnTravis = System.getenv("CI") == "true"
+
+    if (isRunningOnTravis) {
+        // configure keystore
+        signingConfigs.release.storeFile = file("../healthdeck-droid.jks")
+        signingConfigs.release.storePassword = System.getenv("keystore_password")
+        signingConfigs.release.keyAlias = System.getenv("keystore_alias")
+        signingConfigs.release.keyPassword = System.getenv("keystore_alias_password")
+    }
+
+    // end APK packager
+
+    // Disables the build crashing when linting errors.
+    lintOptions {
+        abortOnError false
+    }
+
 }
 
 dependencies {
