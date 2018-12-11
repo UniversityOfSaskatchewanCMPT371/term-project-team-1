@@ -7,7 +7,7 @@ ShallowWrapper {
     myCards={
       Object {
         "bio": "I like Cats.",
-        "image": "Not Yet Implemented.",
+        "image": "https://imgur.com/gallery/9vPpm4r",
         "link": "google.ca",
         "name": "Test",
         "pro": "Doctor",
@@ -72,7 +72,7 @@ ShallowWrapper {
           <Component
             source={
               Object {
-                "uri": "Not Yet Implemented.",
+                "uri": "https://imgur.com/gallery/9vPpm4r",
               }
             }
             style={
@@ -214,7 +214,7 @@ ShallowWrapper {
           "children": <Component
             source={
               Object {
-                "uri": "Not Yet Implemented.",
+                "uri": "https://imgur.com/gallery/9vPpm4r",
               }
             }
             style={
@@ -233,7 +233,7 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "source": Object {
-              "uri": "Not Yet Implemented.",
+              "uri": "https://imgur.com/gallery/9vPpm4r",
             },
             "style": Object {
               "flex": 1,
@@ -301,7 +301,7 @@ ShallowWrapper {
             <Component
               source={
                 Object {
-                  "uri": "Not Yet Implemented.",
+                  "uri": "https://imgur.com/gallery/9vPpm4r",
                 }
               }
               style={
@@ -443,7 +443,7 @@ ShallowWrapper {
             "children": <Component
               source={
                 Object {
-                  "uri": "Not Yet Implemented.",
+                  "uri": "https://imgur.com/gallery/9vPpm4r",
                 }
               }
               style={
@@ -462,7 +462,7 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "source": Object {
-                "uri": "Not Yet Implemented.",
+                "uri": "https://imgur.com/gallery/9vPpm4r",
               },
               "style": Object {
                 "flex": 1,

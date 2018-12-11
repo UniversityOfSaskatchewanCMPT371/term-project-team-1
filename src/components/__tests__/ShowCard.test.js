@@ -22,7 +22,7 @@ test('renders correctly', () => {
   { name:'Test',
     bio:'I like Cats.',
     pro:"Doctor",
-    image:"Not Yet Implemented.",
+    image:"https://imgur.com/gallery/9vPpm4r",
     link: 'google.ca'}}/>);
   expect(wrapper).toMatchSnapshot();
 });
@@ -37,7 +37,7 @@ test('it puts each item in the card correctly', () => {
   { name:'Test',
     bio:'I like Cats.',
     pro:"Doctor",
-    image:"Not Yet Implemented.",
+    image:"https://imgur.com/gallery/9vPpm4r",
     link: 'google.ca'}}/>);
   const myProps = wrapper.props();
   console.log(myProps.children);
@@ -78,7 +78,7 @@ test('it puts each item in the card correctly', () => {
   expect(linkProp).toEqual('google.ca');
   /* This one should actually NOT equal what we give it as it's hard coded to say "Image should be displayed here having trouble importing it"
   no matter what you put in*/
-  expect(imageProp).not.toEqual("Not Yet Implemented.");
+  expect(imageProp).not.toEqual("https://imgur.com/gallery/9vPpm4r");
   //expect(wrapper).toMatchSnapshot();
 });
 
