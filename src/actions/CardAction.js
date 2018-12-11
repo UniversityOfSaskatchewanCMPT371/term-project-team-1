@@ -33,6 +33,18 @@ export const cardCreate = ({ name, bio, pro, image, link }) => {
   };
 };
 
+
+export const fetchCard = ( id ) => {
+  return (dispatch) => {
+    const { currentUser } = firebase.auth();
+    firebase.database().ref(`/data/Cards/{id}`)
+      .on('value', snapshot => {
+        dispatch( {type: CARDS_FETCH_SUCCESS, payload: snapshot.val()});
+      });
+  };
+};
+
+
 //Go grab the cards that we have in our specefic user if any new value has been added
 //so if a user scans a new scanner their list of cards will update automatically
 export const fetchMyCards = () => {
